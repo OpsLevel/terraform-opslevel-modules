@@ -20,3 +20,12 @@ variable "responsibilities" {
   description = "A description of what the team is responsible for."
   default     = null
 }
+
+variable "members" {
+  description = "List of members with their email and role."
+  type = list(object({
+    email = string
+    role  = string
+  }))
+  default = []
+}
