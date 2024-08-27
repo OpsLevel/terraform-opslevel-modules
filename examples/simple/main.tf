@@ -44,3 +44,11 @@ module "filter" {
       value  = "2"
     }
 }
+  
+module "check" {
+  source   = "../../modules/check"
+  type     = "manual"
+  name     = "Is Metadata Updated?"
+  category = "Quality"
+  level    = "Bronze"
+}
