@@ -5,19 +5,21 @@ variable "update_frequency" {
     value         = number
   })
   description = "Defines the minimum frequency of the updates."
+  default     = null
 }
 
 variable "update_requires_comment" {
   type        = bool
   description = "Whether the check requires a comment or not."
+  default     = false
 }
 
 resource "opslevel_check_manual" "manual" {
   count                   = var.type == "manual" ? 1 : 0
 
   name                    = var.name
-  category                = var.category
-  level                   = var.level
+  category                = local.category
+  level                   = local.level
   enable_on               = var.enable_on
   enabled                 = var.enabled
   filter                  = var.filter
