@@ -1,3 +1,3 @@
-output "all_teams" {
+output "all" {
   value = data.opslevel_teams.all
 }
