@@ -13,6 +13,8 @@ tasks:
 
   plan:
     desc: Run "terraform plan" in "{{.WORKSPACE_DIR}}"
+    requires:
+      vars: [OPSLEVEL_API_TOKEN]
     cmds:
       - task: init
       - task: terraform-command
@@ -20,6 +22,8 @@ tasks:
 
   apply:
     desc: Run "terraform apply" in "{{.WORKSPACE_DIR}}"
+    requires:
+      vars: [OPSLEVEL_API_TOKEN]
     cmds:
       - task: init
       - task: terraform-command

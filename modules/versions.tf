@@ -3,8 +3,7 @@ terraform {
 
   required_providers {
     opslevel = {
-      source  = "OpsLevel/opslevel"
-      version = "1.2.6"
+      source = "OpsLevel/opslevel"
     }
   }
 }
