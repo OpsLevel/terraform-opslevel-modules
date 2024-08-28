@@ -33,6 +33,7 @@ variable "services" {
   default = []
 }
 
+// TODO: This is us papering over the fact that we cannot use team alias for the owner field in system - https://github.com/OpsLevel/team-platform/issues/461
 data "opslevel_teams" "all" {}
 
 locals {
