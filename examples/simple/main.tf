@@ -34,17 +34,18 @@ module "filter" {
   name   = "Platform Services"
   predicates = [
     {
-      key    = "name"
-      type   = "contains"
-      value  = "Platform"
+      key   = "name"
+      type  = "contains"
+      value = "Platform"
     },
     {
-      key    = "tier_index"
-      type   = "greater_than_or_equal_to"
-      value  = "2"
-    }
+      key   = "tier_index"
+      type  = "greater_than_or_equal_to"
+      value = "2"
+    },
+  ]
 }
-  
+
 module "check" {
   source   = "../../modules/check"
   type     = "manual"
