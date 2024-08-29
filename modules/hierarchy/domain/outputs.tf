@@ -6,6 +6,6 @@ output "this" {
   value = opslevel_domain.this
 }
 
-output "systems" {
-  value = module.systems.this
-}
+#output "systems" {
+#  value = module.systems[*].this
+#}
