@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths:
+      - '.github/workflows/tests.yml'
+      - 'examples/**'
+      - 'modules/**'
+
+jobs:
+  lint-terraform-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
+      - name: Terraform Validate
+        run: terraform validate -no-tests
