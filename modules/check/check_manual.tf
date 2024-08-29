@@ -15,16 +15,16 @@ variable "update_requires_comment" {
 }
 
 resource "opslevel_check_manual" "manual" {
-  count                   = var.type == "manual" ? 1 : 0
+  count = var.type == "manual" ? 1 : 0
 
-  name                    = var.name
-  category                = local.category
-  level                   = local.level
-  enable_on               = var.enable_on
-  enabled                 = var.enabled
-  filter                  = var.filter
-  owner                   = var.owner
-  notes                   = var.notes
+  name      = var.name
+  category  = local.category
+  level     = local.level
+  enable_on = var.enable_on
+  enabled   = var.enabled
+  filter    = var.filter
+  owner     = var.owner
+  notes     = var.notes
 
   update_frequency        = var.update_frequency
   update_requires_comment = var.update_requires_comment

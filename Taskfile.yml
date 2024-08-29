@@ -5,6 +5,12 @@ vars:
   WORKSPACE_DIR: "workspace"
 
 tasks:
+  fix:
+    desc: Fix Terraform formatting
+    cmds:
+      - task: terraform-command
+        vars: { TF_COMMAND: "fmt -recursive -write=true", TF_CMD_DIR: "{{.ROOT_DIR}}" }
+
   lint:
     desc: Formatting and linting
     cmds:

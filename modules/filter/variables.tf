@@ -6,7 +6,7 @@ variable "name" {
 variable "connective" {
   type        = string
   description = "logical operator to be used in conjunction with multiple filters"
-  default = "and"
+  default     = "and"
 }
 
 variable "predicates" {
