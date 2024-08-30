@@ -8,8 +8,8 @@ resource "opslevel_domain" "this" {
 }
 
 module "systems" {
-  source = "../system"
-  for_each = { for system in var.systems : system.name => system }
+  source      = "../system"
+  for_each    = { for system in var.systems : system.name => system }
   name        = each.value.name
   description = each.value.description
   domain      = opslevel_domain.this.id

@@ -28,9 +28,9 @@ variable "owner" {
 }
 
 variable "services" {
-  type = list(string)
+  type        = list(string)
   description = "The services that this system is responsible for."
-  default = []
+  default     = []
 }
 
 // TODO: This is us papering over the fact that we cannot use team alias for the owner field in system - https://github.com/OpsLevel/team-platform/issues/461
