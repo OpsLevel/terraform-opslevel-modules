@@ -34,7 +34,7 @@ resource "opslevel_service_repository" "this" {
   service          = opslevel_service.this.id
 }
 
-resource "opslevel_property_assignment" "test" {
+resource "opslevel_property_assignment" "this" {
   for_each = var.properties
 
   definition = each.key
