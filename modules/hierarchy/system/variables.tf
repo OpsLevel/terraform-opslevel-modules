@@ -37,8 +37,8 @@ variable "services" {
 data "opslevel_teams" "all" {}
 
 locals {
-  owner = startswith(var.owner, "Z2lkOi8v") ? var.owner : flatten([
+  owner = var.owner == null ? null : (startswith(var.owner, "Z2lkOi8v") ? var.owner : flatten([
     for obj in data.opslevel_teams.all.teams :
     obj.id if obj.alias == var.owner
-  ])[0]
+  ])[0])
 }

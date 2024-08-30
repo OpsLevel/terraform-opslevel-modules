@@ -28,14 +28,15 @@ variable "systems" {
       owner       = optional(string)
       services = list(string)
     }))
+  default = []
 }
 
 // TODO: This is us papering over the fact that we cannot use team alias for the owner field in domain - https://github.com/OpsLevel/team-platform/issues/461
 data "opslevel_teams" "all" {}
 
 locals {
-  owner = startswith(var.owner, "Z2lkOi8v") ? var.owner : flatten([
+  owner = var.owner == null ? null : (startswith(var.owner, "Z2lkOi8v") ? var.owner : flatten([
     for obj in data.opslevel_teams.all.teams :
     obj.id if obj.alias == var.owner
-  ])[0]
+  ])[0])
 }
