@@ -16,7 +16,7 @@ resource "opslevel_service" "this" {
 }
 
 resource "opslevel_service_tool" "this" {
-  for_each    = { for item in var.tools : item.name => item }
+  for_each = { for item in var.tools : item.name => item }
 
   category    = each.value.category
   environment = each.value.environment
@@ -26,7 +26,7 @@ resource "opslevel_service_tool" "this" {
 }
 
 resource "opslevel_service_repository" "this" {
-  for_each         = { for item in var.repositories : item.name => item }
+  for_each = { for item in var.repositories : item.name => item }
 
   base_directory   = each.value.base_directory
   name             = each.value.name
@@ -35,7 +35,7 @@ resource "opslevel_service_repository" "this" {
 }
 
 resource "opslevel_property_assignment" "test" {
-  for_each   = var.properties
+  for_each = var.properties
 
   definition = each.key
   owner      = opslevel_service.this.id
