@@ -1,6 +1,6 @@
 data "opslevel_users" "all" {}
 
-resource "opslevel_user" "test" {
+resource "opslevel_user" "this" {
   email              = var.email
   name               = var.name
   role               = var.role

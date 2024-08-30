@@ -1,6 +1,6 @@
 data "opslevel_teams" "all" {}
 
-resource "opslevel_team" "test" {
+resource "opslevel_team" "this" {
   aliases          = var.aliases
   name             = var.name
   parent           = var.parent
