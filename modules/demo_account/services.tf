@@ -56,6 +56,15 @@ module "shopping-cart" {
   properties = {
     "my_custom_property" = jsonencode("helloworld")
   }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      curl -X POST -H "Content-Type: application/json" \
+      -H "Authorization: Bearer ${OPSLEVEL_API_TOKEN}" \
+      https://upload.opslevel.com/upload/documents/sbom/${self.id} \
+      -d ${local.sbom_good}
+EOT
+  }
 }
 
 module "order-workflow" {
