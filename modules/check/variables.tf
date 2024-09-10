@@ -1,13 +1,16 @@
 # special variables
 
+locals {
+  check_types = ["manual", "package_version"]
+}
+
 variable "check_type" {
   type        = string
-  description = "The type of the check the module should create."
+  description = "The type of check to create."
   validation {
-    condition     = contains(["manual", null], var.check_type)
-    error_message = format("Invalid check type.  Valid values are: %s", join(",", var.check_types))
+    condition     = contains(local.check_types, var.type)
+    error_message = format("expected type to be one of %v", local.check_types)
   }
-  default = null
 }
 
 # base variables that apply to all check types
