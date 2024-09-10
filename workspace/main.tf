@@ -2,5 +2,5 @@ provider "opslevel" {
 }
 
 module "account" {
-    source = "../modules/demo_account"
+  source = "../modules/demo_account"
 }
