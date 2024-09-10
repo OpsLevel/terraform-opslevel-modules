@@ -15,11 +15,11 @@ variable "update_requires_comment" {
 }
 
 resource "opslevel_check_manual" "manual" {
-  count = var.type == "manual" ? 1 : 0
+  count = var.check_type == "manual" ? 1 : 0
 
   name      = var.name
-  category  = local.category
-  level     = local.level
+  category  = var.category
+  level     = var.level
   enable_on = var.enable_on
   enabled   = var.enabled
   filter    = var.filter
