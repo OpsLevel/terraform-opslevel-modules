@@ -33,6 +33,8 @@ variable "version_constraint_predicate" {
 }
 
 resource "opslevel_check_package_version" "this" {
+  count = var.check_type == "package_version" ? 1 : 0
+
   name     = var.name
   enabled  = var.enabled
   category = var.category
