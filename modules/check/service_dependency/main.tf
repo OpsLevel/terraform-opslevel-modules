@@ -1,10 +1,20 @@
-resource "opslevel_check_service_dependency" "test" {
-  category  = var.category
+resource "opslevel_check_service_dependency" "this" {
+  category  = module.category.this
   enable_on = var.enable_on
   enabled   = var.enabled
   filter    = var.filter
-  level     = var.level
+  level     = module.level.this
   name      = var.name
   notes     = var.notes
   owner     = var.owner
+}
+
+module "category" {
+  source          = "../../rubric_category"
+  rubric_category = var.category
+}
+
+module "level" {
+  source       = "../../rubric_level"
+  rubric_level = var.level
 }
