@@ -1,14 +1,24 @@
-resource "opslevel_check_service_property" "test" {
+resource "opslevel_check_service_property" "this" {
   property  = var.property
   predicate = var.predicate
 
   # -- check base fields --
-  category  = var.category
+  category  = module.category.this
   enable_on = var.enable_on
   enabled   = var.enabled
   filter    = var.filter
-  level     = var.level
+  level     = module.level.this
   name      = var.name
   notes     = var.notes
   owner     = var.owner
+}
+
+module "category" {
+  source          = "../../rubric_category"
+  rubric_category = var.category
+}
+
+module "level" {
+  source       = "../../rubric_level"
+  rubric_level = var.level
 }
