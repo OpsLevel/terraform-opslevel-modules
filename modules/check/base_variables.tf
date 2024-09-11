@@ -1,20 +1,3 @@
-# special variables
-
-locals {
-  check_types = ["manual", "package_version"]
-}
-
-variable "check_type" {
-  type        = string
-  description = "The type of check to create."
-  validation {
-    condition     = contains(local.check_types, var.type)
-    error_message = format("expected type to be one of %v", local.check_types)
-  }
-}
-
-# base variables that apply to all check types
-
 variable "category" {
   type        = string
   description = "The id of the category the check belongs to."
