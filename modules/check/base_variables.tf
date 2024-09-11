@@ -1,11 +1,11 @@
 variable "category" {
   type        = string
-  description = "The id of the category the check belongs to."
+  description = "The id or alias of the category the check belongs to."
 }
 
 variable "level" {
   type        = string
-  description = "The id of the level the check belongs to."
+  description = "The id or alias of the level the check belongs to."
 }
 
 variable "name" {
