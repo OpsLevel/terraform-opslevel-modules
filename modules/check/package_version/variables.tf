@@ -31,23 +31,3 @@ variable "version_constraint_predicate" {
   })
   description = "A condition that should be satisfied."
 }
-
-resource "opslevel_check_package_version" "this" {
-  count = var.check_type == "package_version" ? 1 : 0
-
-  name     = var.name
-  enabled  = var.enabled
-  category = var.category
-  filter   = var.filter
-  level    = var.level
-  owner    = var.owner
-  notes    = var.notes
-
-  package_constraint           = var.package_constraint
-  package_manager              = var.package_manager
-  package_name                 = var.package_name
-  package_name_is_regex        = var.package_name_is_regex
-  missing_package_result       = var.missing_package_result
-  version_constraint_predicate = var.version_constraint_predicate
-}
-
