@@ -1,7 +1,7 @@
 resource "opslevel_check_manual" "this" {
   name      = var.name
-  category  = var.category
-  level     = var.level
+  category  = module.category.this
+  level     = module.level.this
   enable_on = var.enable_on
   enabled   = var.enabled
   filter    = var.filter
@@ -19,3 +19,12 @@ resource "opslevel_check_manual" "this" {
   }
 }
 
+module "category" {
+  source          = "../../rubric_category"
+  rubric_category = var.category
+}
+
+module "level" {
+  source       = "../../rubric_level"
+  rubric_level = var.level
+}
