@@ -1,5 +1,3 @@
-data "opslevel_services" "all" {}
-
 resource "opslevel_service" "this" {
   aliases                       = var.aliases
   api_document_path             = var.api_document_path

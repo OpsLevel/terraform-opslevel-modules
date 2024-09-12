@@ -1,5 +1,3 @@
-data "opslevel_filters" "all" {}
-
 resource "opslevel_filter" "this" {
   name       = var.name
   connective = var.connective
