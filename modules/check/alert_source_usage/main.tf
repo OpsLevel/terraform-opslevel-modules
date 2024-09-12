@@ -1,4 +1,4 @@
-resource "opslevel_check_alert_source_usage" "test" {
+resource "opslevel_check_alert_source_usage" "this" {
   alert_name_predicate = var.alert_name_predicate
   alert_type           = var.alert_type
 

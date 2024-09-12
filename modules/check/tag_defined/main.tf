@@ -1,4 +1,4 @@
-resource "opslevel_check_tag_defined" "test" {
+resource "opslevel_check_tag_defined" "this" {
   tag_key       = var.tag_key
   tag_predicate = var.tag_predicate
 

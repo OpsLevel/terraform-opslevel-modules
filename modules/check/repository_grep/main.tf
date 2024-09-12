@@ -1,4 +1,4 @@
-resource "opslevel_check_repository_grep" "test" {
+resource "opslevel_check_repository_grep" "this" {
   directory_search        = var.directory_search
   file_contents_predicate = var.file_contents_predicate
   filepaths               = var.filepaths
