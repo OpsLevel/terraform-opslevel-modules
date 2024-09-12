@@ -1,17 +1,17 @@
 locals {
   people = {
-    "john" : { name : "John doe", email : "john@example.com" }
-    "ken" : { name : "Ken doe", email : "ken@example.com" }
-    "adam" : { name : "Adam doe", email : "adam@example.com" }
-    "ian" : { name : "Ian doe", email : "ian@example.com" }
-    "toms" : { name : "Toms doe", email : "toms@example.com" }
-    "muriel" : { name : "Muriel doe", email : "muriel@example.com" }
-    "ty" : { name : "Ty doe", email : "ty@example.com" }
-    "andrew" : { name : "Andrew doe", email : "andrew@example.com" }
-    "stephanie" : { name : "Stephanie doe", email : "stephanie@example.com" }
-    "emily" : { name : "Emily doe", email : "emily@example.com" }
-    "kyle" : { name : "Kyle doe", email : "kyle@example.com" }
-    "david" : { name : "David doe", email : "david@example.com" }
+    "john" : { name : "John Doe", email : "john+${local.unique_id}@example.com" }
+    "ken" : { name : "Ken Doe", email : "ken+${local.unique_id}@example.com" }
+    "adam" : { name : "Adam Doe", email : "adam+${local.unique_id}@example.com" }
+    "ian" : { name : "Ian Doe", email : "ian+${local.unique_id}@example.com" }
+    "toms" : { name : "Toms Doe", email : "toms+${local.unique_id}@example.com" }
+    "muriel" : { name : "Muriel Doe", email : "muriel+${local.unique_id}@example.com" }
+    "ty" : { name : "Ty Doe", email : "ty+${local.unique_id}@example.com" }
+    "andrew" : { name : "Andrew Doe", email : "andrew+${local.unique_id}@example.com" }
+    "stephanie" : { name : "Stephanie Doe", email : "stephanie+${local.unique_id}@example.com" }
+    "emily" : { name : "Emily Doe", email : "emily+${local.unique_id}@example.com" }
+    "kyle" : { name : "Kyle Doe", email : "kyle+${local.unique_id}@example.com" }
+    "david" : { name : "David Doe", email : "david+${local.unique_id}@example.com" }
   }
 }
 
