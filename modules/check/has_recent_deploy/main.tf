@@ -1,4 +1,4 @@
-resource "opslevel_check_has_recent_deploy" "test" {
+resource "opslevel_check_has_recent_deploy" "this" {
   days = var.days
 
   # -- check base fields --

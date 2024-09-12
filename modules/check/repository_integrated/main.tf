@@ -1,4 +1,4 @@
-resource "opslevel_check_repository_integrated" "test" {
+resource "opslevel_check_repository_integrated" "this" {
   # -- check base fields --
   category  = var.category
   enable_on = var.enable_on

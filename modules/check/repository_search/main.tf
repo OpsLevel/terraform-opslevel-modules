@@ -1,4 +1,4 @@
-resource "opslevel_check_repository_search" "test" {
+resource "opslevel_check_repository_search" "this" {
   # file_contents_predicate = var.file_contents_predicate
   file_contents_predicate = var.file_contents_predicate
   file_extensions         = var.file_extensions

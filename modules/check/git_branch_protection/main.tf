@@ -1,4 +1,4 @@
-resource "opslevel_check_git_branch_protection" "test" {
+resource "opslevel_check_git_branch_protection" "this" {
   category  = module.category.this
   enable_on = var.enable_on
   enabled   = var.enabled

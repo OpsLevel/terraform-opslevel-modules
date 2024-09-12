@@ -1,4 +1,4 @@
-resource "opslevel_check_has_documentation" "test" {
+resource "opslevel_check_has_documentation" "this" {
   document_type    = var.document_type
   document_subtype = var.document_subtype
 
