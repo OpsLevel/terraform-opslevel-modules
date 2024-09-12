@@ -1,7 +1,7 @@
 variable "generate_services" {
-    description = "The number of services to generate."
-    type        = number
-    default     = 0
+  description = "The number of services to generate."
+  type        = number
+  default     = 0
 }
 
 resource "random_pet" "services" {
@@ -28,6 +28,6 @@ module "ai-team" {
 resource "opslevel_service" "generated" {
   count = var.generate_services
 
-  name         = random_pet.services[count.index].id
-  owner        = module.ai-team.this.id
+  name  = random_pet.services[count.index].id
+  owner = module.ai-team.this.id
 }
