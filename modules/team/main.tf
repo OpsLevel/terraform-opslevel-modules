@@ -1,5 +1,3 @@
-data "opslevel_teams" "all" {}
-
 resource "opslevel_team" "this" {
   aliases          = var.aliases
   name             = var.name
@@ -15,3 +13,4 @@ resource "opslevel_team" "this" {
     }
   }
 }
+
