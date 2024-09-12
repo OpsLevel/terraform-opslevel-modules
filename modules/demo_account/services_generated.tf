@@ -25,8 +25,9 @@ module "ai-team" {
 }
 
 # We had to use the resource directly here because the module does a query for all services per service generated which is SUPER heavy.
-resource "opslevel_service" "generated" {
-  count = var.generate_services
+module "services_generated" {
+  source = "../service"
+  count  = var.generate_services
 
   name  = random_pet.services[count.index].id
   owner = module.ai-team.this.id
