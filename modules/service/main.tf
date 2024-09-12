@@ -15,17 +15,17 @@ resource "opslevel_service" "this" {
   tier_alias                    = var.tier_alias
 }
 
-resource "opslevel_service_tool" "this" {
-  for_each = { for item in var.tools : item.name => item }
+resource "opslevel_property_assignment" "this" {
+  for_each = var.properties
 
-  category    = each.value.category
-  environment = each.value.environment
-  name        = each.value.name
-  service     = opslevel_service.this.id
-  url         = each.value.url
+  definition = each.key
+  owner      = opslevel_service.this.id
+  value      = each.value
 }
 
-resource "opslevel_service_repository" "this" {
+module "service_repository" {
+  source = "./repository"
+
   for_each = { for item in var.repositories : item.name => item }
 
   base_directory   = each.value.base_directory
@@ -34,10 +34,14 @@ resource "opslevel_service_repository" "this" {
   service          = opslevel_service.this.id
 }
 
-resource "opslevel_property_assignment" "this" {
-  for_each = var.properties
+module "service_tool" {
+  source = "./tool"
 
-  definition = each.key
-  owner      = opslevel_service.this.id
-  value      = each.value
+  for_each = { for item in var.tools : item.name => item }
+
+  category    = each.value.category
+  environment = each.value.environment
+  name        = each.value.name
+  service     = opslevel_service.this.id
+  url         = each.value.url
 }
