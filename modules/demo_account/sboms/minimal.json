@@ -1,0 +1,145 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:3c1ed074-6751-46f7-9eb3-5279bb5c6495",
+  "version": 1,
+  "metadata": {
+      "timestamp": "2023-12-20T08:34:16-06:00",
+      "tools": [
+          {
+              "vendor": "anchore",
+              "name": "syft",
+              "version": "0.98.0"
+          }
+      ],
+      "component": {
+          "bom-ref": "08329a07b4eb8eac",
+          "type": "file",
+          "name": "./"
+      }
+  },
+  "components": [
+    {
+        "bom-ref": "pkg:npm/yocto-queue@0.1.0?package-id=53de3aa662c0a00a",
+        "type": "cryptographic-asset",
+        "name": "yocto-queue",
+        "version": "0.1.0",
+        "cpe": "cpe:2.3:a:yocto-queue:yocto-queue:0.1.0:*:*:*:*:*:*:*",
+        "purl": "pkg:npm/yocto-queue@0.1.0",
+        "properties": [
+            {
+                "name": "syft:package:foundBy",
+                "value": "javascript-lock-cataloger"
+            },
+            {
+                "name": "syft:package:language",
+                "value": "javascript"
+            },
+            {
+                "name": "syft:package:type",
+                "value": "npm"
+            },
+            {
+                "name": "syft:package:metadataType",
+                "value": "javascript-yarn-lock-entry"
+            },
+            {
+                "name": "syft:cpe23",
+                "value": "cpe:2.3:a:yocto-queue:yocto_queue:0.1.0:*:*:*:*:*:*:*"
+            },
+            {
+                "name": "syft:cpe23",
+                "value": "cpe:2.3:a:yocto_queue:yocto-queue:0.1.0:*:*:*:*:*:*:*"
+            },
+            {
+                "name": "syft:cpe23",
+                "value": "cpe:2.3:a:yocto_queue:yocto_queue:0.1.0:*:*:*:*:*:*:*"
+            },
+            {
+                "name": "syft:cpe23",
+                "value": "cpe:2.3:a:yocto:yocto-queue:0.1.0:*:*:*:*:*:*:*"
+            },
+            {
+                "name": "syft:cpe23",
+                "value": "cpe:2.3:a:yocto:yocto_queue:0.1.0:*:*:*:*:*:*:*"
+            },
+            {
+                "name": "syft:location:0:path",
+                "value": "/yarn.lock"
+            }
+        ]
+      },
+      {
+          "bom-ref": "pkg:gem/zeitwerk@2.6.12?package-id=fdf94e8c0de5bf8d",
+          "type": "library",
+          "name": "zeitwerk",
+          "version": "2.6.12",
+          "cpe": "cpe:2.3:a:ruby-lang:zeitwerk:2.6.12:*:*:*:*:*:*:*",
+          "purl": "pkg:gem/zeitwerk@2.6.12",
+          "properties": [
+              {
+                  "name": "syft:package:foundBy",
+                  "value": "ruby-gemfile-cataloger"
+              },
+              {
+                  "name": "syft:package:language",
+                  "value": "ruby"
+              },
+              {
+                  "name": "syft:package:type",
+                  "value": "gem"
+              },
+              {
+                  "name": "syft:cpe23",
+                  "value": "cpe:2.3:a:ruby_lang:zeitwerk:2.6.12:*:*:*:*:*:*:*"
+              },
+              {
+                  "name": "syft:cpe23",
+                  "value": "cpe:2.3:a:zeitwerk:zeitwerk:2.6.12:*:*:*:*:*:*:*"
+              },
+              {
+                  "name": "syft:cpe23",
+                  "value": "cpe:2.3:a:ruby:zeitwerk:2.6.12:*:*:*:*:*:*:*"
+              },
+              {
+                  "name": "syft:location:0:path",
+                  "value": "/Gemfile.lock"
+              }
+          ]
+      },
+      {
+          "bom-ref": "pkg:npm/zenscroll@4.0.2?package-id=9ac1a725ce574216",
+          "type": "library",
+          "name": "zenscroll",
+          "version": "4.0.2",
+          "licenses": [
+              {
+                  "license": {
+                      "id": "Unlicense"
+                  }
+              }
+          ],
+          "cpe": "cpe:2.3:a:zenscroll:zenscroll:4.0.2:*:*:*:*:*:*:*",
+          "purl": "pkg:npm/zenscroll@4.0.2",
+          "properties": [
+              {
+                  "name": "syft:package:foundBy",
+                  "value": "javascript-lock-cataloger"
+              },
+              {
+                  "name": "syft:package:language",
+                  "value": "javascript"
+              },
+              {
+                  "name": "syft:package:type",
+                  "value": "npm"
+              },
+              {
+                  "name": "syft:location:0:path",
+                  "value": "/yarn.lock"
+              }
+          ]
+      }
+  ]
+}
