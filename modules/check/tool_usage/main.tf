@@ -1,4 +1,4 @@
-resource "opslevel_check_tool_usage" "test" {
+resource "opslevel_check_tool_usage" "this" {
   tool_category         = var.tool_category
   environment_predicate = var.environment_predicate
   tool_name_predicate   = var.tool_name_predicate
