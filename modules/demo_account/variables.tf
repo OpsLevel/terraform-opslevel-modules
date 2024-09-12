@@ -1,3 +1,21 @@
+variable "account_name" {
+  description = "The name of the account, used to create unique identifiers where needed."
+  type        = string
+}
+
+resource "random_id" "account" {
+  keepers = {
+    # Generate a new id each time we switch
+    account_name = var.account_name
+  }
+
+  byte_length = 8
+}
+
+locals {
+  unique_id = lower(random_id.account.id)
+}
+
 variable "git_repo" {
   description = "If the account has a git forge already integrated this is the repo that will be attached to all services."
   type        = string
