@@ -41,18 +41,18 @@ module "shopping-cart" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name           = "Cart Monolith"
-  #       base_directory = "src/monolith"
-  #       alias          = "github.com:rocktavious/autopilot"
-  #     },
-  #     {
-  #       name           = "Cart Service"
-  #       base_directory = "src/service"
-  #       alias          = "github.com:rocktavious/autopilot"
-  #     }
-  #   ]
+  repositories = [
+    {
+      name           = "Cart Monolith"
+      base_directory = "src/monolith"
+      alias          = "github.com:rocktavious/autopilot"
+    },
+    {
+      name           = "Cart Service"
+      base_directory = "src/service"
+      alias          = "github.com:rocktavious/autopilot"
+    }
+  ]
   #   properties = {
   #     "my_custom_property" = jsonencode("helloworld")
   #   }
@@ -108,12 +108,12 @@ module "order-workflow" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
 
 module "order-fulfillment" {
@@ -153,12 +153,12 @@ module "order-fulfillment" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
 
 module "procurement-service" {
@@ -204,12 +204,12 @@ module "procurement-service" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
 
 module "picking-and-packing" {
@@ -253,12 +253,12 @@ module "picking-and-packing" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
 
 module "certificate-manager" {
@@ -302,12 +302,12 @@ module "certificate-manager" {
       url      = "https://deploy.bigriver.com/catalog"
     }
   ]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
 
 
@@ -321,10 +321,11 @@ module "employee-directory" {
   tier_alias  = "tier_4"
   aliases     = ["employee_directory", "internal_directory", "internal_employee_directory"]
   tags        = ["k8s:false", "opensource:true"]
-  #   repositories = [
-  #     {
-  #       name  = "Codebase"
-  #       alias = "github.com:rocktavious/autopilot"
-  #     },
-  #   ]
+  repositories = [
+    {
+      name  = "Codebase"
+      alias = "github.com:rocktavious/autopilot"
+    },
+  ]
 }
+
