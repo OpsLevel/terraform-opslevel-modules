@@ -97,9 +97,10 @@ locals {
       url         = "https://eks.aws.com/example"
     },
     "Splunk" = {
-      name     = "Splunk",
-      category = "logs",
-      url      = "https://splunk.com/example"
+      name        = "Splunk",
+      category    = "logs",
+      environment = "Production",
+      url         = "https://splunk.com/example"
     },
     "Splunk-Stg" = {
       name        = "Splunk",

@@ -1,6 +1,12 @@
+module "company-all" {
+  source = "../team"
+  name   = "Company All"
+}
+
 module "executive-leadership-team" {
   source = "../team"
   name   = "ELT"
+  parent = module.company-all.this.id
   members = [
     {
       email = module.people["john"].this.email
@@ -16,6 +22,7 @@ module "executive-leadership-team" {
 module "product-engineering-team" {
   source = "../team"
   name   = "Product Engineering Team"
+  parent = module.company-all.this.id
   members = [
     {
       email = module.people["john"].this.email
@@ -100,7 +107,7 @@ module "internal-tools-team" {
   source           = "../team"
   name             = "Internal Tools Team"
   responsibilities = "This team is responsible for all of our internal tools and systems to help enable developer productivity."
-  parent           = module.product-engineering-team.this.id
+  parent           = module.dev-experience-group.this.id
   members = [
     {
       email = module.people["ty"].this.email

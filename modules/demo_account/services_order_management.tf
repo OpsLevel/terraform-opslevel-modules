@@ -9,11 +9,12 @@ module "shopping-cart" {
   owner           = module.order-management-team.this.id
   tier_alias      = "tier_1"
   aliases         = ["shopping_cart", "cart", "cart-service", "cart_service"]
-  tags            = ["db:mysql", "k8s:true", "kafka-topic:cart-additions", "rails-version:5.2.6"]
+  tags            = ["db:mysql", "k8s:true", "kafka-topic:cart-additions", "rails-version:5.2.6", "build_speed:fast", "deploy_speed:fast", "mttr:2"]
   tools = [
     local.tools.Datadog,
     local.tools.Datadog-Stg,
     local.tools.Splunk,
+    local.tools.Sentry,
     local.tools.Sentry-Stg,
     local.tools.Runbooks,
     local.tools.PagerDuty,
@@ -50,10 +51,12 @@ module "order-workflow" {
   owner           = module.order-management-team.this.id
   tier_alias      = "tier_2"
   aliases         = ["order_workflow", "order-workflow", "orders"]
-  tags            = ["db:postgres", "k8s:true", "kafka-topic:orders"]
+  tags            = ["db:postgres", "k8s:true", "kafka-topic:orders", "build_speed:fast", "deploy_speed:slow", "mttr:4"]
   tools = [
     local.tools.Splunk,
     local.tools.PagerDuty,
+    local.tools.Sentry,
+    local.tools.Datadog,
   ]
   repositories = local.repository
   properties   = local.properties
@@ -70,7 +73,7 @@ module "order-fulfillment" {
   owner           = module.order-management-team.this.id
   tier_alias      = "tier_3"
   aliases         = ["order_fulfillment", "order-fulfillment", "fulfillment"]
-  tags            = ["db:mysql", "k8s:true", "kafka-topic:orders"]
+  tags            = ["db:mysql", "k8s:true", "kafka-topic:orders", "build_speed:fast", "deploy_speed:slow"]
   tools = [
     local.tools.Admin,
     local.tools.Kubernetes,
