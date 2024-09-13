@@ -62,6 +62,19 @@ module "order-workflow" {
   properties   = local.properties
 }
 
+resource "terraform_data" "order-workflow" {
+  depends_on = [module.order-workflow]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      curl -X POST -H "Content-Type: application/json" \
+      -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
+      https://upload.opslevel.com/upload/documents/sbom/${module.order-workflow.this.id} \
+      -d '${local.sbom_good}'
+EOT
+  }
+}
+
 module "order-fulfillment" {
   source          = "../service"
   name            = "Order Fulfillment"
@@ -82,4 +95,17 @@ module "order-fulfillment" {
   ]
   repositories = local.repository
   properties   = local.properties
+}
+
+resource "terraform_data" "order-fulfillment" {
+  depends_on = [module.order-fulfillment]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      curl -X POST -H "Content-Type: application/json" \
+      -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
+      https://upload.opslevel.com/upload/documents/sbom/${module.order-fulfillment.this.id} \
+      -d '${local.sbom_good}'
+EOT
+  }
 }
