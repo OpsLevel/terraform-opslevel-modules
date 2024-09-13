@@ -35,7 +35,7 @@ module "procurement-service" {
   owner           = module.inventory-team.this.id
   tier_alias      = "tier_4"
   aliases         = ["procurement_service", "procurement-service", "procurement"]
-  tags            = ["db:mssql", "k8s:false", "build_speed:fast", "deploy_speed:slow", "mttr:4"]
+  tags            = ["db:postgres", "k8s:false", "build_speed:fast", "deploy_speed:slow", "mttr:4"]
   tools = [
     local.tools.Datadog,
     local.tools.Splunk,
