@@ -8,13 +8,13 @@ resource "opslevel_infrastructure" "aws_vpc" {
     url     = "https://us-east-1.console.aws.amazon.com/rds/home"
   }
   data = jsonencode({
-    name                = "order-management-production"
-    external_id         = "arn:aws:rds:us-east-1:746108190720:vpc"
-    zone                = "us-east-1"
-    ipv4_cidr = "172.24.0.0/16"
-    nat_gateway = null
+    name             = "order-management-production"
+    external_id      = "arn:aws:rds:us-east-1:746108190720:vpc"
+    zone             = "us-east-1"
+    ipv4_cidr        = "172.24.0.0/16"
+    nat_gateway      = null
     internet_gateway = null
-    is_default = false
+    is_default       = false
   })
 }
 
