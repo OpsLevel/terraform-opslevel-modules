@@ -7,7 +7,7 @@ module "certificate-manager" {
   lifecycle_alias = "generally_available"
   owner           = module.internal-tools-team.this.id
   tier_alias      = "tier_3"
-  tags            = ["k8s:true"]
+  tags            = ["k8s:true", "build_speed:fast"]
   tools = [
     local.tools.Admin,
     local.tools.Kubernetes,
@@ -27,7 +27,7 @@ module "employee-directory" {
   owner        = module.internal-tools-team.this.id
   tier_alias   = "tier_4"
   aliases      = ["employee_directory", "internal_directory", "internal_employee_directory"]
-  tags         = ["k8s:false", "opensource:true"]
+  tags         = ["k8s:false", "opensource:true", "build_speed:slow"]
   repositories = local.repository
   properties   = local.properties
 }

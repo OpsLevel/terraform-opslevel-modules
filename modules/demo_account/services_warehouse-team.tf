@@ -7,7 +7,7 @@ module "picking-and-packing" {
   lifecycle_alias = "generally_available"
   owner           = module.warehouse-team.this.id
   tier_alias      = "tier_3"
-  tags            = ["db:mysql", "k8s:true"]
+  tags            = ["db:mysql", "k8s:true", "build_speed:fast"]
   tools = [
     local.tools.Admin,
     local.tools.Sentry,

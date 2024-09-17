@@ -9,7 +9,7 @@ module "catalog-service" {
   owner           = module.inventory-team.this.id
   tier_alias      = "tier_1"
   aliases         = ["catalog_service", "catalog-service", "catalog"]
-  tags            = ["db:cassandra", "db:mysql"]
+  tags            = ["db:cassandra", "db:mysql", "build_speed:fast"]
   tools = [
     local.tools.Datadog,
     local.tools.Splunk,
@@ -17,6 +17,7 @@ module "catalog-service" {
     local.tools.PagerDuty,
     local.tools.Gremlin,
     local.tools.Kubernetes,
+    local.tools.Sentry,
     local.tools.Admin
   ]
   repositories = local.repository
@@ -34,11 +35,12 @@ module "procurement-service" {
   owner           = module.inventory-team.this.id
   tier_alias      = "tier_4"
   aliases         = ["procurement_service", "procurement-service", "procurement"]
-  tags            = ["db:mssql", "k8s:false"]
+  tags            = ["db:postgres", "k8s:false", "build_speed:fast", "deploy_speed:slow", "mttr:4"]
   tools = [
     local.tools.Datadog,
     local.tools.Splunk,
     local.tools.PagerDuty,
+    local.tools.Sentry,
   ]
   repositories = local.repositories
   properties   = local.properties
