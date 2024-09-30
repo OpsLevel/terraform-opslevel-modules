@@ -3,12 +3,6 @@ variable "email" {
   description = "The email address of the user."
 }
 
-variable "force_send_invite" {
-  type        = bool
-  description = "Send an invite email even if notifications are disabled for the account."
-  default     = null
-}
-
 variable "name" {
   type        = string
   description = "The name of the user."
