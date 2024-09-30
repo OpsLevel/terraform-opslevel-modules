@@ -14,6 +14,12 @@ variable "role" {
   default     = "user"
 }
 
+variable "send_invite" {
+  type        = bool
+  description = "Send an invite email even if notifications are disabled for the account."
+  default     = false
+}
+
 variable "skip_welcome_email" {
   type        = bool
   description = "Don't send an email welcoming the user to OpsLevel."
