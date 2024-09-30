@@ -18,29 +18,29 @@ tasks:
       - task: terraform-format-check
 
   plan:
-    desc: Run "terraform plan" in "{{.WORKSPACE_DIR}}"
+    desc: Run "terraform plan" in "{{.USER_WORKING_DIR}}"
     requires:
       vars: [OPSLEVEL_API_TOKEN]
     cmds:
       - task: init
       - task: terraform-command
-        vars: { TF_COMMAND: 'plan', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
+        vars: { TF_COMMAND: 'plan', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
   apply:
-    desc: Run "terraform apply" in "{{.WORKSPACE_DIR}}"
+    desc: Run "terraform apply" in "{{.USER_WORKING_DIR}}"
     requires:
       vars: [OPSLEVEL_API_TOKEN]
     cmds:
       - task: init
       - task: terraform-command
-        vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
+        vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
   init:
     internal: true
-    desc: Run "terraform init -upgrade" in "{{.WORKSPACE_DIR}}"
+    desc: Run "terraform init -upgrade" in "{{.USER_WORKING_DIR}}"
     cmds:
       - task: terraform-command
-        vars: { TF_COMMAND: 'init --upgrade', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
+        vars: { TF_COMMAND: 'init --upgrade', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
   terraform-validate:
     internal: true
