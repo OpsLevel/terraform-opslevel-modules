@@ -17,7 +17,7 @@ variable "role" {
 variable "send_invite" {
   type        = bool
   description = "Send an invite email even if notifications are disabled for the account."
-  default     = true
+  default     = false
 }
 
 variable "skip_welcome_email" {
