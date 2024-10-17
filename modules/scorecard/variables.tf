@@ -6,13 +6,13 @@ variable "affects_overall_service_levels" {
 variable "description" {
   type        = string
   description = "The scorecard's description."
-  default = null
+  default     = null
 }
 
 variable "filter_id" {
   type        = string
   description = "The scorecard's filter."
-  default = null
+  default     = null
 }
 
 variable "name" {
