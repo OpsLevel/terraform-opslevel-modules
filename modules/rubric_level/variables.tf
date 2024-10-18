@@ -14,9 +14,3 @@ variable "name" {
   type        = string
   description = "The display name of the rubric level."
 }
-
-variable "rubric_level" {
-  type        = string
-  description = "The id or alias of the rubric level."
-  default     = null
-}
