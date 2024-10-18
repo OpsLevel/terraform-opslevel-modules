@@ -1,11 +1,11 @@
 resource "opslevel_check_manual" "this" {
-  name      = var.name
   category  = module.category.this
-  level     = module.level.this
   enable_on = var.enable_on
   enabled   = var.enabled
   filter    = var.filter
+  level     = module.level.this
   owner     = var.owner
+  name      = var.name
   notes     = var.notes
 
   update_frequency        = var.update_frequency
@@ -20,11 +20,11 @@ resource "opslevel_check_manual" "this" {
 }
 
 module "category" {
-  source          = "../../rubric_category"
+  source          = "../../rubric_category/data"
   rubric_category = var.category
 }
 
 module "level" {
-  source       = "../../rubric_level"
+  source       = "../../rubric_level/data"
   rubric_level = var.level
 }

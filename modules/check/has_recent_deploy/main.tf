@@ -13,11 +13,11 @@ resource "opslevel_check_has_recent_deploy" "this" {
 }
 
 module "category" {
-  source          = "../../rubric_category"
+  source          = "../../rubric_category/data"
   rubric_category = var.category
 }
 
 module "level" {
-  source       = "../../rubric_level"
+  source       = "../../rubric_level/data"
   rubric_level = var.level
 }
