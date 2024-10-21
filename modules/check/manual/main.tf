@@ -10,13 +10,6 @@ resource "opslevel_check_manual" "this" {
 
   update_frequency        = var.update_frequency
   update_requires_comment = var.update_requires_comment
-
-  lifecycle {
-    ignore_changes = [
-      enabled,
-      enable_on
-    ]
-  }
 }
 
 module "category" {
