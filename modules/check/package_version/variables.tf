@@ -21,7 +21,7 @@ variable "package_name" {
 
 variable "package_name_is_regex" {
   type        = bool
-  description = "Whether or not the value in the package name field is a regular expression. (Optional.)"
+  description = "Whether or not the value in the package name field is a regular expression. (Optional)"
   default     = null
 }
 
@@ -30,6 +30,6 @@ variable "version_constraint_predicate" {
     type  = string
     value = optional(string)
   })
-  description = "The predicate that describes the version constraint the package must satisfy."
+  description = "The predicate that describes the version constraint the package must satisfy. (Optional)"
   default     = null
 }
