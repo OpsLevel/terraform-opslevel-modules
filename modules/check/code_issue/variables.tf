@@ -23,7 +23,7 @@ variable "max_allowed" {
 
 variable "resolution_time" {
   type = object({
-    type  = string
+    unit  = string
     value = number
   })
   description = "The resolution time recommended by the reporting source of the code issue."
