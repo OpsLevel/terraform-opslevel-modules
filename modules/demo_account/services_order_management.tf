@@ -32,7 +32,7 @@ resource "terraform_data" "shopping-chart-deploys" {
 
   provisioner "local-exec" {
     on_failure = continue
-    command = <<EOT
+    command    = <<EOT
       ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
@@ -43,7 +43,7 @@ resource "terraform_data" "shopping-chart-terraform" {
 
   provisioner "local-exec" {
     on_failure = continue
-    command = <<EOT
+    command    = <<EOT
       ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
@@ -54,7 +54,7 @@ resource "terraform_data" "shopping-chart-rollbacks" {
 
   provisioner "local-exec" {
     on_failure = continue
-    command = <<EOT
+    command    = <<EOT
       ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
@@ -65,7 +65,7 @@ resource "terraform_data" "shopping-cart-sbom" {
 
   provisioner "local-exec" {
     on_failure = continue
-    command = <<EOT
+    command    = <<EOT
       curl -X POST -H "Content-Type: application/json" \
       -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
       https://upload.opslevel.com/upload/documents/sbom/${module.shopping-cart.this.id} \
@@ -101,7 +101,7 @@ resource "terraform_data" "order-workflow" {
 
   provisioner "local-exec" {
     on_failure = continue
-    command = <<EOT
+    command    = <<EOT
       curl -X POST -H "Content-Type: application/json" \
       -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
       https://upload.opslevel.com/upload/documents/sbom/${module.order-workflow.this.id} \
