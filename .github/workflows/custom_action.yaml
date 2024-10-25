@@ -1,0 +1,23 @@
+name: "Custom Actions Handler"
+
+on:
+  repository_dispatch:
+    types:
+      - actions
+
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.1"
+      - name: Apply
+        env:
+          PAYLOAD: "${{ toJson(github.event.client_payload) }}"
+        run: |
+          task apply-demo
