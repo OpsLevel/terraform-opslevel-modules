@@ -40,6 +40,36 @@ EOT
   }
 }
 
+resource "terraform_data" "shopping-cart-deploys" {
+  depends_on = [module.deploys]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]}
+EOT
+  }
+}
+
+resource "terraform_data" "shopping-cart-terraform" {
+  depends_on = [module.terraform]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]}
+EOT
+  }
+}
+
+resource "terraform_data" "shopping-cart-rollbacks" {
+  depends_on = [module.rollbacks]
+
+  provisioner "local-exec" {
+    command = <<EOT
+      ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]}
+EOT
+  }
+}
+
 module "order-workflow" {
   source          = "../service"
   name            = "Order Workflow"
