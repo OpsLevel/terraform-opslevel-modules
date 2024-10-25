@@ -1,0 +1,27 @@
+name: "Custom Actions Handler"
+
+on:
+  repository_dispatch:
+    types:
+      - actions
+
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.1"
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Apply
+        env:
+          PAYLOAD: "${{ toJson(github.event.client_payload) }}"
+        run: |
+          task apply-demo
