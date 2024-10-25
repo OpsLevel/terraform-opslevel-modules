@@ -1,4 +1,4 @@
-resource "opslevel_infrastructure" "test" {
+resource "opslevel_infrastructure" "this" {
   aliases       = var.aliases
   data          = var.data
   owner         = var.owner
