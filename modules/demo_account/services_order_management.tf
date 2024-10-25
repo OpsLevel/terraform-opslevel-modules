@@ -27,35 +27,35 @@ module "shopping-cart" {
   properties   = local.properties
 }
 
-resource "terraform_data" "shopping-chart-deploys" {
+resource "terraform_data" "shopping-cart-deploys" {
   depends_on = [module.deploys]
 
   provisioner "local-exec" {
     on_failure = continue
     command    = <<EOT
-      ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
+      ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
 }
 
-resource "terraform_data" "shopping-chart-terraform" {
+resource "terraform_data" "shopping-cart-terraform" {
   depends_on = [module.terraform]
 
   provisioner "local-exec" {
     on_failure = continue
     command    = <<EOT
-      ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
+      ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
 }
 
-resource "terraform_data" "shopping-chart-rollbacks" {
+resource "terraform_data" "shopping-cart-rollbacks" {
   depends_on = [module.rollbacks]
 
   provisioner "local-exec" {
     on_failure = continue
     command    = <<EOT
-      ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.shopping-chart.this.aliases)[0]} ${local.unique_id}
+      ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
 EOT
   }
 }
