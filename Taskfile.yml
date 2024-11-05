@@ -35,6 +35,15 @@ tasks:
       - task: terraform-command
         vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
+  destroy:
+    desc: Run "terraform destroy" in "{{.USER_WORKING_DIR}}"
+    requires:
+      vars: [OPSLEVEL_API_TOKEN]
+    cmds:
+      - task: init
+      - task: terraform-command
+        vars: { TF_COMMAND: 'destroy', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+
   init:
     internal: true
     desc: Run "terraform init -upgrade" in "{{.USER_WORKING_DIR}}"
