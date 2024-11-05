@@ -73,3 +73,16 @@ module "has_deployed_this_sprint" {
 }
 
 # No Medium Vulns - security
+# module "no_critical_vulns" {
+#   source = "../check/package_version"
+#
+#   name     = "No Critical Vulnerabilities"
+#   category = opslevel_rubric_category.all["security"].id
+#   level    = opslevel_rubric_level.all["gold"].id
+#   owner    = module.internal-tools-team.this.id
+#   enabled  = true
+#
+#   missing_package_result = "pass"
+#
+#   severity = "medium"
+# }
