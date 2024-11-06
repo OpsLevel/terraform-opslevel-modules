@@ -1,6 +1,18 @@
+variable "account_token" {
+  description = "The token for the account."
+  type        = string
+  sensitive   = true
+}
+
 variable "account_name" {
   description = "The name of the account, used to create unique identifiers where needed."
   type        = string
+}
+
+variable "account_users" {
+  description = "The email addresses of the users to invite to this demo account."
+  type        = list(string)
+  default     = []
 }
 
 resource "random_id" "account" {

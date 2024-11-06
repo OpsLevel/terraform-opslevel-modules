@@ -35,6 +35,20 @@ tasks:
       - task: terraform-command
         vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
+  apply-demo:
+    desc: Run "terraform apply" to generate a demo account
+    requires:
+      vars: [PAYLOAD]
+    env:
+      OPSLEVEL_API_TOKEN:
+        sh: echo "$PAYLOAD" | jq -r '.api_token'
+      TF_VAR_USER_EMAIL:
+        sh: echo "$PAYLOAD" | jq -r '.user_email'
+    cmds:
+      - task: init
+      - task: terraform-command
+        vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "./demo" }
+
   destroy:
     desc: Run "terraform destroy" in "{{.USER_WORKING_DIR}}"
     requires:
