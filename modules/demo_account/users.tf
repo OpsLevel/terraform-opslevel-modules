@@ -22,3 +22,10 @@ module "people" {
   name   = each.value.name
   email  = each.value.email
 }
+
+resource "opslevel_user" "user" {
+    for_each = var.account_users
+
+    name  = each.value
+    email = each.value
+}
