@@ -28,4 +28,5 @@ resource "opslevel_user" "user" {
 
   name  = each.value
   email = each.value
+  role = "admin"
 }
