@@ -58,6 +58,18 @@ tasks:
       - task: terraform-command
         vars: { TF_COMMAND: 'destroy', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
 
+  factory-reset:
+    desc: Run "terraform destroy" in "{{.USER_WORKING_DIR}}"
+    requires:
+      vars: [OPSLEVEL_API_TOKEN]
+    vars:
+      ACCOUNT_NAME:
+        sh: opslevel graphql -q='query { account { name }}' | jq -r '.[0].account.name'
+    cmds:
+      - echo "Destroying all resources in account '{{.ACCOUNT_NAME}}'..."
+      - # ./clear_account.sh NOTE uncomment to use
+    prompt: "Are you sure you want to destroy all resources in account '{{.ACCOUNT_NAME}}'?"
+
   init:
     internal: true
     desc: Run "terraform init -upgrade" in "{{.USER_WORKING_DIR}}"

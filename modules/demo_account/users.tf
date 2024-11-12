@@ -24,8 +24,8 @@ module "people" {
 }
 
 resource "opslevel_user" "user" {
-    for_each = var.account_users
+  for_each = var.account_users
 
-    name  = each.value
-    email = each.value
+  name  = each.value
+  email = each.value
 }

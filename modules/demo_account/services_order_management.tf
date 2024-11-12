@@ -28,7 +28,7 @@ module "shopping-cart" {
 }
 
 resource "opslevel_alias" "shopping-cart" {
-  resource_type = "service"
+  resource_type       = "service"
   resource_identifier = "shopping-cart"
 
   aliases = ["suez", "panana", "gibraltar"]
