@@ -75,11 +75,11 @@ module "has_deployed_this_sprint" {
 module "github_check_package_version" {
   source = "../check/package_version"
 
-  name = "Uses Latest Github Actions Checkout"
+  name     = "Uses Latest Github Actions Checkout"
   category = opslevel_rubric_category.all["security"].id
-  level = opslevel_rubric_level.all["gold"].id
-  owner = module.internal-tools-team.this.id
-  enabled = true
+  level    = opslevel_rubric_level.all["gold"].id
+  owner    = module.internal-tools-team.this.id
+  enabled  = true
 
   package_constraint     = "matches_version"
   package_manager        = "github"
