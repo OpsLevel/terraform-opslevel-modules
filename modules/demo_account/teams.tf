@@ -88,7 +88,7 @@ module "warehouse-team" {
 
 module "dev-experience-group" {
   source           = "../team"
-  name             = "Dev Experiance Group"
+  name             = "Dev Experience Group"
   responsibilities = "This groups is responsible for the developer experience."
   parent           = module.product-engineering-team.this.id
   members = [
