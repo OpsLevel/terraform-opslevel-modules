@@ -7,7 +7,7 @@ resource "opslevel_webhook_action" "security_scan" {
     content-type  = "application/json"
     authorization = "Bearer ${var.account_token}"
   }
-  payload = local.sbom_bad
+  payload = local.sbom_minimal
 }
 
 resource "opslevel_trigger_definition" "example" {

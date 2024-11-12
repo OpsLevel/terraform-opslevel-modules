@@ -37,17 +37,19 @@ tasks:
 
   apply-demo:
     desc: Run "terraform apply" to generate a demo account
+    dir: "./demo"
     requires:
       vars: [PAYLOAD]
     env:
       OPSLEVEL_API_TOKEN:
         sh: echo "$PAYLOAD" | jq -r '.api_token'
-      TF_VAR_USER_EMAIL:
+      TF_VAR_account_token:
+        sh: echo "$PAYLOAD" | jq -r '.api_token'
+      TF_VAR_user_email:
         sh: echo "$PAYLOAD" | jq -r '.user_email'
     cmds:
-      - task: init
-      - task: terraform-command
-        vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "./demo" }
+      - "terraform init --upgrade"
+      - "terraform apply"
 
   destroy:
     desc: Run "terraform destroy" in "{{.USER_WORKING_DIR}}"
@@ -75,7 +77,7 @@ tasks:
     desc: Run "terraform init -upgrade" in "{{.USER_WORKING_DIR}}"
     cmds:
       - task: terraform-command
-        vars: { TF_COMMAND: 'init --upgrade', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+        vars: { TF_COMMAND: 'init --upgrade', TF_CMD_DIR: "." }
 
   terraform-validate:
     internal: true

@@ -11,7 +11,7 @@ variable "account_name" {
 
 variable "account_users" {
   description = "The email addresses of the users to invite to this demo account."
-  type        = list(string)
+  type        = set(string)
   default     = []
 }
 
