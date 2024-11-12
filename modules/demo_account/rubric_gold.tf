@@ -83,7 +83,7 @@ module "github_check_package_version" {
 
   package_constraint     = "matches_version"
   package_manager        = "github"
-  package_name           = "actions/checkout"
+  package_name           = "action/checkout"
   missing_package_result = "passed"
   version_constraint_predicate = {
     type  = "matches_regex"
