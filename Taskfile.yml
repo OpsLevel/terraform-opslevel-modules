@@ -37,9 +37,9 @@ tasks:
       vars: [OPSLEVEL_API_TOKEN, SANDBOX_USER_EMAIL]
     env:
       TF_VAR_account_token:
-        sh: echo "OPSLEVEL_API_TOKEN"
+        sh: echo "$OPSLEVEL_API_TOKEN"
       TF_VAR_user_email:
-        sh: echo "SANDBOX_USER_EMAIL"
+        sh: echo "$SANDBOX_USER_EMAIL"
     cmds:
       - task: install-terraform
       - "terraform -chdir={{.WORKSPACE_DIR}} init --upgrade"
