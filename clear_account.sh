@@ -8,13 +8,13 @@ done
 
 echo "[opslevel] Deleting Systems..."
 systems=$(opslevel list systems -o json)
-echo "$systems" | jq -r '.[] | .Id' | while read -r id; do
+echo "$systems" | jq -r '.[] | .id' | while read -r id; do
   opslevel delete system "$id"
 done
 
 echo "[opslevel] Deleting Domains..."
 domains=$(opslevel list domains -o json)
-echo "$domains" | jq -r '.[] | .Id' | while read -r id; do
+echo "$domains" | jq -r '.[] | .id' | while read -r id; do
   opslevel delete domain "$id"
 done
 
