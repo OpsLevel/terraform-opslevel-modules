@@ -8,8 +8,6 @@ on:
 jobs:
   handler:
     runs-on: ubuntu-latest
-    container:
-      image: public.ecr.aws/opslevel/platform-tools:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,6 +20,9 @@ jobs:
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install CLI
+        run: |
+          brew install opslevel/tap/cli
       - name: Apply
         env:
           OPSLEVEL_API_TOKEN: "${{ toJson(github.event.client_payload.api_token) }}"
