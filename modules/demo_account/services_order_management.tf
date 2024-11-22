@@ -27,6 +27,13 @@ module "shopping-cart" {
   properties   = local.properties
 }
 
+resource "opslevel_alias" "shopping-cart" {
+  resource_type       = "service"
+  resource_identifier = module.shopping-cart.this.id
+
+  aliases = ["suez", "panana", "gibraltar"]
+}
+
 resource "terraform_data" "shopping-cart-deploys" {
   depends_on = [module.deploys]
 

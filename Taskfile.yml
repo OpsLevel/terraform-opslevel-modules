@@ -18,38 +18,60 @@ tasks:
       - task: terraform-format-check
 
   plan:
-    desc: Run "terraform plan" in "{{.USER_WORKING_DIR}}"
+    desc: Run "terraform plan" in "{{.WORKSPACE_DIR}}"
     requires:
       vars: [OPSLEVEL_API_TOKEN]
     cmds:
-      - task: init
-      - task: terraform-command
-        vars: { TF_COMMAND: 'plan', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+      - task: init-and-plan
 
   apply:
-    desc: Run "terraform apply" in "{{.USER_WORKING_DIR}}"
+    desc: Run "terraform apply" in "{{.WORKSPACE_DIR}}"
     requires:
       vars: [OPSLEVEL_API_TOKEN]
     cmds:
-      - task: init
-      - task: terraform-command
-        vars: { TF_COMMAND: 'apply', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+      - task: init-and-apply
+
+  apply-demo:
+    desc: Run "terraform apply" to generate a demo account
+    requires:
+      vars: [PAYLOAD]
+    env:
+      OPSLEVEL_API_TOKEN:
+        sh: echo "$PAYLOAD" | jq -r '.api_token'
+      TF_VAR_account_token:
+        sh: echo "$PAYLOAD" | jq -r '.api_token'
+      TF_VAR_user_email:
+        sh: echo "$PAYLOAD" | jq -r '.user_email'
+    cmds:
+      - task: init-and-apply
 
   destroy:
-    desc: Run "terraform destroy" in "{{.USER_WORKING_DIR}}"
+    desc: Run "terraform destroy" in "{{.WORKSPACE_DIR}}"
     requires:
       vars: [OPSLEVEL_API_TOKEN]
     cmds:
-      - task: init
-      - task: terraform-command
-        vars: { TF_COMMAND: 'destroy', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+      - task: init-and-destroy
 
-  init:
+  factory-reset:
+    desc: Run script to destroy all resources in account
+    requires:
+      vars: [OPSLEVEL_API_TOKEN]
+    vars:
+      ACCOUNT_NAME:
+        sh: opslevel graphql -q='query { account { name }}' | jq -r '.[0].account.name'
+    cmds:
+      - echo "Destroying all resources in account '{{.ACCOUNT_NAME}}'..."
+      - ./clear_account.sh
+    prompt: "Are you sure you want to destroy all resources in account '{{.ACCOUNT_NAME}}'?"
+
+  init-and-*:
     internal: true
-    desc: Run "terraform init -upgrade" in "{{.USER_WORKING_DIR}}"
+    desc: Run "terraform init -upgrade" in "{{.WORKSPACE_DIR}}" then '{{index .MATCH 0}}'
     cmds:
       - task: terraform-command
-        vars: { TF_COMMAND: 'init --upgrade', TF_CMD_DIR: "{{.USER_WORKING_DIR}}" }
+        vars: { TF_COMMAND: 'init -upgrade', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
+      - task: terraform-command
+        vars: { TF_COMMAND: '{{index .MATCH 0}}', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
 
   terraform-validate:
     internal: true

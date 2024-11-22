@@ -1,10 +1,10 @@
 terraform {
-  required_version = ">= 1.7"
+  required_version = ">= 1.9"
 
   required_providers {
     opslevel = {
       source  = "OpsLevel/opslevel"
-      version = "1.3.1"
+      version = "1.3.3"
     }
   }
 }
