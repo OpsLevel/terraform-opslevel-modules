@@ -34,14 +34,12 @@ tasks:
   apply-demo:
     desc: Run "terraform apply" to generate a demo account
     requires:
-      vars: [PAYLOAD]
+      vars: [OPSLEVEL_API_TOKEN, SANDBOX_USER_EMAIL]
     env:
-      OPSLEVEL_API_TOKEN:
-        sh: echo "$PAYLOAD" | jq -r '.api_token'
       TF_VAR_account_token:
-        sh: echo "$PAYLOAD" | jq -r '.api_token'
+        sh: echo "OPSLEVEL_API_TOKEN"
       TF_VAR_user_email:
-        sh: echo "$PAYLOAD" | jq -r '.user_email'
+        sh: echo "SANDBOX_USER_EMAIL"
     cmds:
       - task: install-terraform
       - "terraform -chdir={{.WORKSPACE_DIR}} init --upgrade"
