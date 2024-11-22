@@ -27,11 +27,45 @@ module "shopping-cart" {
   properties   = local.properties
 }
 
-resource "terraform_data" "shopping-cart" {
+resource "terraform_data" "shopping-cart-deploys" {
+  depends_on = [module.deploys]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}
+
+resource "terraform_data" "shopping-cart-terraform" {
+  depends_on = [module.terraform]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}
+
+resource "terraform_data" "shopping-cart-rollbacks" {
+  depends_on = [module.rollbacks]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.shopping-cart.this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}
+
+resource "terraform_data" "shopping-cart-sbom" {
   depends_on = [module.shopping-cart]
 
   provisioner "local-exec" {
-    command = <<EOT
+    on_failure = continue
+    command    = <<EOT
       curl -X POST -H "Content-Type: application/json" \
       -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
       https://upload.opslevel.com/upload/documents/sbom/${module.shopping-cart.this.id} \
@@ -66,7 +100,8 @@ resource "terraform_data" "order-workflow" {
   depends_on = [module.order-workflow]
 
   provisioner "local-exec" {
-    command = <<EOT
+    on_failure = continue
+    command    = <<EOT
       curl -X POST -H "Content-Type: application/json" \
       -H "Authorization: Bearer $OPSLEVEL_API_TOKEN" \
       https://upload.opslevel.com/upload/documents/sbom/${module.order-workflow.this.id} \
