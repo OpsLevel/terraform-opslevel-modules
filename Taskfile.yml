@@ -43,7 +43,9 @@ tasks:
       TF_VAR_user_email:
         sh: echo "$PAYLOAD" | jq -r '.user_email'
     cmds:
-      - task: init-and-apply
+      - task: install-terraform
+      - "terraform -chdir={{.WORKSPACE_DIR}} init --upgrade"
+      - "terraform -chdir={{.WORKSPACE_DIR}} apply {{.CLI_ARGS}}"
 
   destroy:
     desc: Run "terraform destroy" in "{{.WORKSPACE_DIR}}"
