@@ -8,6 +8,8 @@ on:
 jobs:
   handler:
     runs-on: ubuntu-latest
+    container:
+      image: public.ecr.aws/opslevel/platform-tools:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
