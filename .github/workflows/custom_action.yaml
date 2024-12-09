@@ -20,13 +20,12 @@ jobs:
         with:
           version: 3.x
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install CLI
-        run: |
-          brew install opslevel/tap/cli
+      - name: Setup OpsLevel CLI
+        uses: opslevel/actions/setup-cli@v1
       - name: Apply
         env:
           OPSLEVEL_API_TOKEN: "${{ toJson(github.event.client_payload.api_token) }}"
           SANDBOX_USER_EMAIL: "${{ toJson(github.event.client_payload.user_email) }}"
         run: |
           task factory-reset -y
-          task apply-demo -- -auto-approve 
+          task apply-demo -- -auto-approve
