@@ -24,8 +24,8 @@ jobs:
         uses: opslevel/actions/setup-cli@v1
       - name: Apply
         env:
-          OPSLEVEL_API_TOKEN: "${{ toJson(github.event.client_payload.api_token) }}"
-          SANDBOX_USER_EMAIL: "${{ toJson(github.event.client_payload.user_email) }}"
+          OPSLEVEL_API_TOKEN: ${{ toJson(github.event.client_payload.api_token) }}
+          SANDBOX_USER_EMAIL: ${{ toJson(github.event.client_payload.user_email) }}
         run: |
           task factory-reset -y
           task apply-demo -- -auto-approve
