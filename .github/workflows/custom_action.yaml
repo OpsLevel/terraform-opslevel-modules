@@ -35,7 +35,7 @@ jobs:
       - name: Mask inputs from Github
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          OPSLEVEL_API_TOKEN=$(jq -r '.client_payload.api_token' $GITHUB_EVENT_PATH)
+          OPSLEVEL_API_TOKEN=$(jq -r '.inputs.api_token' $GITHUB_EVENT_PATH)
           SANDBOX_USER_EMAIL=$(jq -r '.inputs.user_email' $GITHUB_EVENT_PATH)
           echo "::add-mask::$OPSLEVEL_API_TOKEN"
           echo "::add-mask::$SANDBOX_USER_EMAIL"
