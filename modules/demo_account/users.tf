@@ -26,7 +26,8 @@ module "people" {
 resource "opslevel_user" "user" {
   for_each = { for user in var.account_users : split("@", user)[0] => user }
 
-  name  = each.value
-  email = each.value
-  role  = "admin"
+  name               = each.value
+  email              = each.value
+  role               = "admin"
+  skip_welcome_email = false
 }
