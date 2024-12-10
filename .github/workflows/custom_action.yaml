@@ -34,10 +34,10 @@ jobs:
         uses: opslevel/actions/setup-cli@v1
       - name: Mask inputs
         run: |
-          echo "::add-mask::$OPSLEVEL_API_TOKEN"
-          echo "::add-mask::$SANDBOX_USER_EMAIL"
           OPSLEVEL_API_TOKEN=$(jq -r 'select(.client_payload.api_token or .inputs.api_token)' $GITHUB_EVENT_PATH)
           SANDBOX_USER_EMAIL=$(jq -r 'select(.client_payload.user_email or .inputs.user_email)' $GITHUB_EVENT_PATH)
+          echo "::add-mask::$OPSLEVEL_API_TOKEN"
+          echo "::add-mask::$SANDBOX_USER_EMAIL"
           echo "OPSLEVEL_API_TOKEN=$OPSLEVEL_API_TOKEN" >> $GITHUB_ENV
           echo "SANDBOX_USER_EMAIL=$SANDBOX_USER_EMAIL" >> $GITHUB_ENV
       - name: Apply Terraform
