@@ -34,8 +34,8 @@ jobs:
         uses: opslevel/actions/setup-cli@v1
       - name: Mask inputs
         run: |
-          OPSLEVEL_API_TOKEN=$(jq -r 'select(.client_payload.api_token or .inputs.api_token)' $GITHUB_EVENT_PATH)
-          SANDBOX_USER_EMAIL=$(jq -r 'select(.client_payload.user_email or .inputs.user_email)' $GITHUB_EVENT_PATH)
+          OPSLEVEL_API_TOKEN=$(jq -r '.client_payload.api_token // .inputs.api_token' $GITHUB_EVENT_PATH)
+          SANDBOX_USER_EMAIL=$(jq -r '.client_payload.user_email // .inputs.user_email' $GITHUB_EVENT_PATH)
           echo "::add-mask::$OPSLEVEL_API_TOKEN"
           echo "::add-mask::$SANDBOX_USER_EMAIL"
           echo "OPSLEVEL_API_TOKEN=$OPSLEVEL_API_TOKEN" >> $GITHUB_ENV
