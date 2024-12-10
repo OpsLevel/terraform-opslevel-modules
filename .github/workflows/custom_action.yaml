@@ -4,6 +4,16 @@ on:
   repository_dispatch:
     types:
       - actions
+  workflow_dispatch:
+    inputs:
+      api_token:
+        description: "The API token of the sandbox account to Terraform apply to."
+        type: string
+        required: true
+      user_email:
+        description: "Email address to send invite to."
+        type: string
+        required: true
 
 jobs:
   handler:
@@ -14,7 +24,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.9.1"
+          terraform_version: "~1.10.0"
       - name: Install Task
         uses: arduino/setup-task@v2
         with:
@@ -22,10 +32,22 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup OpsLevel CLI
         uses: opslevel/actions/setup-cli@v1
-      - name: Apply
+      - name: Mask Access Token - from Github
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          echo "::add-mask::$API_TOKEN"
+          echo "API_TOKEN=${{ github.event.inputs.api_token }}" >> $GITHUB_ENV
+          echo "USER_EMAIL=${{ github.event.inputs.user_email }}" >> $GITHUB_ENV
+      - name: Mask Access Token - from OpsLevel
+        if: ${{ github.event_name == 'repository_dispatch' }}
+        run: |
+          echo "::add-mask::$API_TOKEN"
+          echo "API_TOKEN=${{ fromJSON(github.event.client_payload.api_token) }}" >> $GITHUB_ENV
+          echo "USER_EMAIL=${{ fromJSON(github.event.client_payload.user_email) }}" >> $GITHUB_ENV
+      - name: Apply Terraform
         env:
-          OPSLEVEL_API_TOKEN: ${{ fromJSON(github.event.client_payload.api_token) }}
-          SANDBOX_USER_EMAIL: ${{ fromJSON(github.event.client_payload.user_email) }}
+          OPSLEVEL_API_TOKEN: "${{ env.API_TOKEN }}"
+          SANDBOX_USER_EMAIL: "${{ env.USER_EMAIL }}"
         run: |
           task factory-reset -y
           task apply-demo -- -auto-approve
