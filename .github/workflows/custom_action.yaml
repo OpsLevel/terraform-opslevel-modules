@@ -42,8 +42,8 @@ jobs:
         if: ${{ github.event_name == 'repository_dispatch' }}
         run: |
           echo "::add-mask::$API_TOKEN"
-          echo "API_TOKEN=${{ fromJSON(github.event.client_payload.api_token) }}" >> $GITHUB_ENV
-          echo "USER_EMAIL=${{ fromJSON(github.event.client_payload.user_email) }}" >> $GITHUB_ENV
+          echo "API_TOKEN=${{ github.event.client_payload.api_token }}" >> $GITHUB_ENV
+          echo "USER_EMAIL=${{ github.event.client_payload.user_email }}" >> $GITHUB_ENV
       - name: Apply Terraform
         env:
           OPSLEVEL_API_TOKEN: "${{ env.API_TOKEN }}"
