@@ -32,23 +32,11 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup OpsLevel CLI
         uses: opslevel/actions/setup-cli@v1
-      - name: Mask inputs
+      - name: Apply Terraform
         run: |
           echo "::add-mask::$OPSLEVEL_API_TOKEN"
           echo "::add-mask::$SANDBOX_USER_EMAIL"
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            OPSLEVEL_API_TOKEN=$(jq -r '.inputs.api_token' $GITHUB_EVENT_PATH)
-            SANDBOX_USER_EMAIL=$(jq -r '.inputs.user_email' $GITHUB_EVENT_PATH)
-          else
-            OPSLEVEL_API_TOKEN=$(jq -r '.client_payload.api_token' $GITHUB_EVENT_PATH)
-            SANDBOX_USER_EMAIL=$(jq -r '.client_payload.user_email' $GITHUB_EVENT_PATH)
-          fi
-          echo "OPSLEVEL_API_TOKEN=$OPSLEVEL_API_TOKEN" >> $GITHUB_ENV
-          echo "SANDBOX_USER_EMAIL=$SANDBOX_USER_EMAIL" >> $GITHUB_ENV
-      - name: Apply Terraform
-        env:
-          OPSLEVEL_API_TOKEN: "${{ env.OPSLEVEL_API_TOKEN }}"
-          SANDBOX_USER_EMAIL: "${{ env.SANDBOX_USER_EMAIL }}"
-        run: |
+          export OPSLEVEL_API_TOKEN=$(jq -r 'select(.client_payload.api_token or .inputs.api_token)' $GITHUB_EVENT_PATH)
+          export SANDBOX_USER_EMAIL=$(jq -r 'select(.client_payload.user_email or .inputs.user_email)' $GITHUB_EVENT_PATH)
           task factory-reset -y
           task apply-demo -- -auto-approve
