@@ -15,6 +15,22 @@ variable "account_users" {
   default     = []
 }
 
+variable "services_from_csv" {
+  description = "Services to create from a csv file."
+  type = list(object({
+    service_name    = string
+    aliases         = optional(string)
+    description     = optional(string)
+    framework       = optional(string)
+    language        = optional(string)
+    lifecycle_alias = optional(string)
+    team_owner      = optional(string)
+    tier            = optional(string)
+    tools           = optional(string)
+  }))
+  default = null
+}
+
 resource "random_id" "account" {
   keepers = {
     # Generate a new id each time we switch
