@@ -1,15 +1,5 @@
 locals {
-  example_csv = [{
-    "Aliases"      = "cart_ninja, ninja, shopping_cart",
-    "Created"      = formatdate("MMM DD, YYYY", timestamp()),
-    "Description"  = "Shopping cart management service",
-    "Service Name" = "cart-ninja",
-    "Team Owner"   = "Midnight Bandits",
-    "Tier"         = "Tier 1",
-    "Tools"        = "GitHub, PagerDuty, Datadog",
-  }]
-  csv_path = "${path.module}/services.csv"
-  csv_data = fileexists(local.csv_path) ? csvdecode(file(local.csv_path)) : local.example_csv
+  csv_data = csvdecode(file("${path.module}/services.csv"))
   csv_services = [
     for service in local.csv_data : {
       for key, value in service :
