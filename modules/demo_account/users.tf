@@ -29,5 +29,6 @@ resource "opslevel_user" "user" {
   name               = each.value
   email              = each.value
   role               = "admin"
+  send_invite        = true
   skip_welcome_email = false
 }
