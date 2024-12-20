@@ -73,6 +73,15 @@ tasks:
       - task: terraform-command
         vars: { TF_COMMAND: '{{index .MATCH 0}}', TF_CMD_DIR: "{{.WORKSPACE_DIR}}" }
 
+  install-sample-integration:
+    desc: Install sample Github integration
+    deps:
+      - install-cli
+    vars:
+      GRAPHQL_QUERY: mutation createSampleGitIntegration { sampleIntegrationCreate { integration { name } } }
+    cmds:
+      - opslevel graphql -H "GraphQL-Visibility=internal" -q='{{.GRAPHQL_QUERY}}'
+
   terraform-validate:
     internal: true
     cmds:
@@ -96,6 +105,18 @@ tasks:
     cmds:
       - task: install-terraform
       - "terraform -chdir={{.TF_CMD_DIR}} {{.TF_COMMAND}} {{.CLI_ARGS}}"
+
+  install-cli:
+    internal: true
+    platforms: [darwin]
+    preconditions:
+      - sh: 'which brew'
+        msg: '"brew" needed to install OpsLevel CLI - see https://brew.sh'
+    status:
+      - test -n "command -v opslevel"
+    cmds:
+      - echo "Installing OpsLevel CLI..."
+      - brew install opslevel/tap/cli
 
   install-terraform:
     internal: true

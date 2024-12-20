@@ -47,3 +47,4 @@ jobs:
         run: |
           task factory-reset -y
           task apply-demo -- -auto-approve
+          task install-sample-integration
