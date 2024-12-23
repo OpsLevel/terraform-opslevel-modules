@@ -13,7 +13,7 @@ module "service_lifecycle_defined" {
 module "has_splunk" {
   source = "../check/tool_usage"
 
-  name     = "Splunk Integrated"
+  name     = "Has Logging Dashboard"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["silver"].id
   owner    = module.internal-tools-team.this.id
@@ -29,7 +29,7 @@ module "has_splunk" {
 module "has_datadog" {
   source = "../check/tool_usage"
 
-  name     = "Datadog Integrated"
+  name     = "Has Monitoring Dashboard"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["silver"].id
   owner    = module.internal-tools-team.this.id
@@ -45,7 +45,7 @@ module "has_datadog" {
 module "has_pagerduty" {
   source = "../check/tool_usage"
 
-  name     = "PagerDuty Integrated"
+  name     = "Has Alerting/Paging System"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["silver"].id
   owner    = module.internal-tools-team.this.id
@@ -74,5 +74,21 @@ module "fast_builds" {
   }
 }
 
-# Log4J - Security
-# No High vulns - security
+module "package_version_github_checkout" {
+  source = "../check/package_version"
+
+  name     = "Uses Latest GA Checkout"
+  category = opslevel_rubric_category.all["security"].id
+  level    = opslevel_rubric_level.all["silver"].id
+  owner    = module.internal-tools-team.this.id
+  enabled  = true
+
+  package_constraint     = "matches_version"
+  package_manager        = "github"
+  package_name           = "actions/checkout"
+  missing_package_result = "passed"
+  version_constraint_predicate = {
+    type  = "matches_regex"
+    value = "^v5.*"
+  }
+}

@@ -37,7 +37,7 @@ module "has_runbooks" {
 module "slos_defined" {
   source = "../check/manual"
 
-  name     = "Has SLOs Defined"
+  name     = "[UPCOMING] Has SLOs Defined"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["gold"].id
   owner    = module.internal-tools-team.this.id
@@ -72,21 +72,23 @@ module "has_deployed_this_sprint" {
   days = 14
 }
 
-module "github_check_package_version" {
+module "check_package_version_testutils" {
   source = "../check/package_version"
 
-  name     = "Uses Latest Github Actions Checkout"
+  name     = "Uses Latest Test Framework"
   category = opslevel_rubric_category.all["security"].id
   level    = opslevel_rubric_level.all["gold"].id
   owner    = module.internal-tools-team.this.id
   enabled  = true
 
   package_constraint     = "matches_version"
-  package_manager        = "github"
-  package_name           = "actions/checkout"
+  package_manager        = "golang"
+  package_name           = "github.com/stretchr/testify"
   missing_package_result = "passed"
   version_constraint_predicate = {
     type  = "matches_regex"
-    value = "^v5.*"
+    value = "^v1.9.*"
   }
 }
+
+

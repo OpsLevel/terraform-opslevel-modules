@@ -45,7 +45,7 @@ module "branch_protection" {
 module "has_sentry" {
   source = "../check/tool_usage"
 
-  name     = "Sentry Integrated"
+  name     = "Has Error Tracking"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["bronze"].id
   owner    = module.internal-tools-team.this.id
@@ -61,13 +61,23 @@ module "has_sentry" {
 module "has_deployed_this_qtr" {
   source = "../check/has_recent_deploy"
 
-  name     = "Has Deployed this Quarter"
+  name     = "[UPCOMING] Has Deployed this Quarter"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["bronze"].id
   owner    = module.internal-tools-team.this.id
   enabled  = false
 
   days = 90
+}
+
+module "has_dependencies" {
+  source = "../check/service_dependency"
+
+  name     = "Has Defined Dependencies"
+  category = opslevel_rubric_category.all["observability"].id
+  level    = opslevel_rubric_level.all["bronze"].id
+  owner    = module.internal-tools-team.this.id
+  enabled  = true
 }
 
 # No Critical Vulns - security
