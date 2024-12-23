@@ -11,8 +11,8 @@ module "product" {
           description = "The system that manages the order workflow."
           owner       = module.product-engineering-team.this.id
           services = [
-            module.order-workflow.this.id,
-            module.order-fulfillment.this.id
+            module.services_from_csv["order-routing"].this.id,
+            module.services_from_csv["order-fulfillment"].this.id
           ]
         },
         {
@@ -20,7 +20,7 @@ module "product" {
           description = "The system that manages the shopping cart."
           owner       = module.product-engineering-team.this.id
           services = [
-            module.shopping-cart.this.id
+            module.services_from_csv["shopping-cart"].this.id,
           ]
         }
       ]
@@ -35,7 +35,8 @@ module "product" {
           description = "The system that manages inventory procurement."
           owner       = module.inventory-team.this.id
           services = [
-            module.procurement-service.this.id
+            module.services_from_csv["inventory-restock"].this.id,
+            module.services_from_csv["inventory-sync"].this.id
           ]
         },
         {
@@ -43,8 +44,8 @@ module "product" {
           description = "Internal tools that help Big River Books employees."
           owner       = module.internal-tools-team.this.id
           services = [
-            module.certificate-manager.this.id,
-            module.employee-directory.this.id
+            module.services_from_csv["employee-directory"].this.id,
+            module.services_from_csv["certificate-manager"].this.id,
           ]
         }
       ]

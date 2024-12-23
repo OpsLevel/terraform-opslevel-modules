@@ -4,7 +4,7 @@ module "service_product_defined" {
   name     = "Product is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   property = "product"
@@ -16,7 +16,7 @@ module "service_system_defined" {
   name     = "System is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   property = "system"
@@ -28,7 +28,7 @@ module "has_runbooks" {
   name     = "Runbooks Defined"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tool_category = "runbooks"
@@ -40,7 +40,7 @@ module "slos_defined" {
   name     = "[UPCOMING] Has SLOs Defined"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = false
 }
 
@@ -50,7 +50,7 @@ module "fast_deploys" {
   name     = "CD is Fast"
   category = opslevel_rubric_category.all["performance"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tag_key = "deploy_speed"
@@ -66,7 +66,7 @@ module "has_deployed_this_sprint" {
   name     = "Has Deployed this Sprint"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   days = 14
@@ -78,7 +78,7 @@ module "check_package_version_testutils" {
   name     = "Uses Latest Test Framework"
   category = opslevel_rubric_category.all["security"].id
   level    = opslevel_rubric_level.all["gold"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   package_constraint     = "matches_version"

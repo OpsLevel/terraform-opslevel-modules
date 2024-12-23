@@ -1,14 +1,25 @@
 #! /bin/bash
 
 deploy() {
-  curl -s -X POST $1 \
+  # Detect if we are on macOS or Linux
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS date command
+    formatted_date=$(date -u $3 '+%FT%TZ')
+  else
+    # Linux date command
+    # Replace `-v` flag and format the input for Linux `date`
+    adjusted=$(echo $3 | sed 's/-v //g' | sed 's/H/hour/g; s/d/day/g')
+    formatted_date=$(date -u -d "$adjusted" '+%FT%TZ')
+  fi
+
+  curl -s -X POST "$1" \
     -H 'content-type: application/json' \
     -d '{
       "service": "'"$2"'",
       "deployer": {
         "email": "'"$5"'"
       },
-      "deployed_at": "'"$(date -u $3 '+%FT%TZ')"'",
+      "deployed_at": "'"$formatted_date"'",
       "description": "CI Pipeline: #'"$4"'",
       "commit": {
         "sha": "'"$(openssl rand -hex 24)"'"
