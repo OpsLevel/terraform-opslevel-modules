@@ -67,4 +67,4 @@ product-feed-fox,Product feed management service,Catalog Cowboys,tier_2,"feed_fo
 inventory-sync,Inventory synchronization service,Stock Whisperers,tier_2,"sync_impala,impala,inventory_sync","GitHub,Kafka,Datadog",2022,Rust,Rocket,generally_available,false
 internal-tools,Internal Tools,Internal Tools,tier_3,"internal-tools,internal_tools","Datadog",2022,Go,Cobra,generally_available,false
 employee-directory,Internal employee directory,Internal Tools,tier_3,"directory",,2022,,,generally_available,false
-certificate-manager,Internal certificate provisioning,Internal Tools,tier_4,,,2022,,,beta,false
+certificate-manager,Internal certificate provisioning,Internal Tools,tier_4,"cert-manager",,2022,,,beta,false
