@@ -42,3 +42,39 @@ module "teams_from_csv" {
   name   = each.value.team_owner
   parent = module.company-all.this.id
 }
+
+resource "terraform_data" "deploy_data" {
+  for_each   = { for svc in local.csv_services : svc.service_name => svc if svc.deploys == "true" }
+  depends_on = [module.deploys]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh deploys ${module.deploys.this.webhook_url} ${tolist(module.services_from_csv[each.key].this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}
+
+resource "terraform_data" "rollbacks_data" {
+  for_each   = { for svc in local.csv_services : svc.service_name => svc if svc.deploys == "true" }
+  depends_on = [module.rollbacks]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh rollbacks ${module.rollbacks.this.webhook_url} ${tolist(module.services_from_csv[each.key].this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}
+
+resource "terraform_data" "configuration_data" {
+  for_each   = { for svc in local.csv_services : svc.service_name => svc if svc.deploys == "true" }
+  depends_on = [module.terraform]
+
+  provisioner "local-exec" {
+    on_failure = continue
+    command    = <<EOT
+      ${path.module}/scripts/sample_deploys.sh terraform ${module.terraform.this.webhook_url} ${tolist(module.services_from_csv[each.key].this.aliases)[0]} ${local.unique_id}
+EOT
+  }
+}

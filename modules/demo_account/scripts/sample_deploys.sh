@@ -4,11 +4,12 @@ deploy() {
   # Detect if we are on macOS or Linux
   if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS date command
-    formatted_date=$(date -u "$3" '+%FT%TZ')
+    formatted_date=$(date -u $3 '+%FT%TZ')
   else
-    # Linux date command (convert macOS -v syntax to Linux -d syntax)
-    offset=${3//-v/} # Remove '-v' for Linux compatibility
-    formatted_date=$(date -u -d "$3" '+%FT%TZ')
+    # Linux date command
+    # Replace `-v` flag and format the input for Linux `date`
+    adjusted=$(echo $3 | sed 's/-v //g' | sed 's/H/hour/g; s/d/day/g')
+    formatted_date=$(date -u -d "$adjusted" '+%FT%TZ')
   fi
 
   curl -s -X POST "$1" \

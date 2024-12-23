@@ -1,70 +1,68 @@
-Service Name,Description,Team Owner,Tier,Aliases,Tools,Created,Language,Framework,Lifecycle
-cart-ninja,Shopping cart management service,Midnight Bandits,tier_1,"cart_ninja, ninja, shopping_cart","GitHub, PagerDuty, Datadog",2020,Ruby,Rails,beta
-payment-wombat,Payment processing and gateway service,Money Mavericks,tier_1,"payment_wombat, wombat, payment_processor","GitHub, PagerDuty, New Relic, Datadog",2019,Rust,Rocket,alpha
-inventory-oracle,Real-time inventory tracking and management,Stock Whisperers,tier_2,"inventory_oracle, oracle, inv_oracle","GitHub, Jira, Datadog",2021,Go,FastHTTP,beta
-hedgehog,User authentication and authorization service,Security Pandas,tier_1,"auth_hedgehog, auth_service, hedgehog_auth","GitHub, PagerDuty, Datadog",2018,TypeScript,Deno,generally_available
-order-fulfillment-maestro,Order processing and fulfillment orchestration,Shipping Sharks,tier_1,"order_fulfillment, maestro, fulfillment_service","GitHub, PagerDuty, New Relic",2020,Python,Django,beta
-raccoon,Search and recommendation engine,Data Wizards,tier_2,"search_raccoon, raccoon_search, search_service","GitHub, Elasticsearch, Datadog",2022,Ruby,Rails,generally_available
-warehouse-pulse,Warehouse management and tracking,Logistics Lions,tier_2,"warehouse_pulse, pulse, wh_pulse","GitHub, Jira, Datadog",2021,Rust,Rocket,alpha
-chameleon,Dynamic pricing engine,Price Pirates,tier_2,"pricing_chameleon, price_engine, chameleon_pricing","GitHub, New Relic, Datadog",2023,Go,FastHTTP,beta
-customer-satisfaction-portal,Customer service and support platform,Support Unicorns,tier_3,"csat_portal, satisfaction_portal, csat","GitHub, Zendesk, Slack",2019,TypeScript,Deno,generally_available
-thunderbolt,Real-time analytics processing,Data Nomads,tier_2,"analytics_bolt, bolt, thunder","GitHub, Datadog, Elasticsearch",2022,Python,Django,beta
-product-catalog-sage,Product information management,Catalog Cowboys,tier_1,"catalog_sage, sage, product_sage","GitHub, PagerDuty, Datadog",2020,Ruby,Rails,generally_available
-notification-yeti,Customer notification service,Comms Cobras,tier_3,"notif_yeti, yeti, notification_service","GitHub, SendGrid, Datadog",2021,Rust,Rocket,alpha
-fraud-sentinel,Fraud detection and prevention,Risk Rangers,tier_1,"fraud_sentinel, sentinel, fraud_detection","GitHub, PagerDuty, New Relic",2019,Go,FastHTTP,beta
-discount-penguin,Promotion and discount management,Deal Dragons,tier_2,"discount_penguin, penguin, promo_penguin","GitHub, Jira, Datadog",2022,TypeScript,Deno,generally_available
-shipping-calculator-phoenix,Shipping rate calculation service,Logistics Lions,tier_2,"shipping_calculator, phoenix, shipping_phoenix","GitHub, New Relic, Datadog",2021,Python,Django,beta
-return-dingo,Returns and refunds processing,Customer Champions,tier_2,"returns_dingo, dingo, return_processor","GitHub, Zendesk, Datadog",2023,Ruby,Rails,generally_available
-wishlist-whale,Wishlist management service,Feature Foxes,tier_3,"wishlist_whale, whale, wish_service","GitHub, Jira, Datadog",2022,Rust,Rocket,alpha
-review-rhino,Product review management,Content Crew,tier_2,"review_rhino, rhino, review_service","GitHub, Elasticsearch, Datadog",2021,Go,FastHTTP,beta
-cart-abandonment-koala,Cart abandonment recovery service,Revenue Rabbits,tier_2,"cart_koala, koala, abandonment_service","GitHub, SendGrid, Datadog",2022,Python,Django,beta
-platypus,A/B testing platform,Experience Engineers,tier_2,"ab_platypus, ab_testing, test_platypus","GitHub, Datadog, LaunchDarkly",2021,Ruby,Rails,generally_available
-content-kangaroo,Content management system,Content Crew,tier_2,"content_kangaroo, kangaroo, cms_service","GitHub, Contentful, Datadog",2020,Rust,Rocket,alpha
-user-preferences-panda,User settings and preferences service,Feature Foxes,tier_3,"user_preferences, panda, preferences_service","GitHub, Redis, Datadog",Go,FastHTTP,2022,beta
-product-comparison-cobra,Product comparison engine,Catalog Cowboys,tier_3,"comparison_cobra, cobra, product_compare","GitHub, Elasticsearch, Datadog",2021,TypeScript,Deno,generally_available
-checkout-cheetah,Fast checkout processing service,Money Mavericks,tier_1,"checkout_cheetah, cheetah, fast_checkout","GitHub, PagerDuty, New Relic",2020,Python,Django,beta
-delivery-tracker-dolphin,Delivery status tracking service,Shipping Sharks,tier_2,"delivery_tracker, dolphin, tracker_dolphin","GitHub, Twilio, Datadog",2021,Ruby,Rails,generally_available
-subscription-sloth,Subscription management service,Revenue Rabbits,tier_2,"subscription_sloth, sloth, sub_service","GitHub, Stripe, Datadog",2022,Rust,Rocket,alpha
-inventory-snapshot,Inventory backup service,Stock Whisperers,tier_3,"inv_snapshot, snapshot, inventory_backup","GitHub, S3, Datadog",2021,Go,FastHTTP,beta
-marketing-meerkat,Marketing automation service,Growth Gorillas,tier_2,"marketing_meerkat, meerkat, mkt_automation","GitHub, Mailchimp, Datadog",2022,TypeScript,Deno,generally_available
-customer-segmentation-squid,Customer segmentation service,Data Wizards,tier_2,"segmentation_squid, squid, customer_segments","GitHub, Snowflake, Datadog",2023,Python,Django,beta
-gift-card-gopher,Gift card management service,Money Mavericks,tier_2,"gift_card_gopher, gopher, gc_service","GitHub, Redis, Datadog",2021,Ruby,Rails,generally_available
-address-validator-armadillo,Address validation service,Logistics Lions,tier_3,"address_validator, armadillo, address_service","GitHub, Google Maps API, Datadog",2022,Rust,Rocket,alpha
-product-bundle-beaver,Product bundling service,Catalog Cowboys,tier_2,"bundle_beaver, beaver, product_bundles","GitHub, Redis, Datadog",2023,Go,FastHTTP,beta
-tax-calculator-turtle,Tax computation service,Money Mavericks,tier_1,"tax_calculator, turtle, tax_service","GitHub, PagerDuty, Avalara",2021,TypeScript,Deno,generally_available
-vendor-portal-vulture,Vendor management platform,Supplier Squad,tier_2,"vendor_portal, vulture, vendor_management","GitHub, Jira, Datadog",2022,Python,Django,beta
-session-management-salamander,User session handling service,Security Pandas,tier_1,"session_management, salamander, session_handler","GitHub, PagerDuty, Redis",2020,Ruby,Rails,generally_available
-product-search-sphinx,Product search service,Data Wizards,tier_1,"search_sphinx, sphinx, product_search","GitHub, PagerDuty, Elasticsearch",2021,Rust,Rocket,alpha
-loyalty-program-lion,Customer loyalty service,Revenue Rabbits,tier_2,"loyalty_lion, lion, loyalty_service","GitHub, Redis, Datadog",2022,Go,FastHTTP,beta
-invoice-generator-iguana,Invoice creation service,Money Mavericks,tier_2,"invoice_iguana, iguana, invoice_gen","GitHub, DocuSign, Datadog",2021,TypeScript,Deno,generally_available
-return-label-lemur,Return shipping label generator,Logistics Lions,tier_2,"return_label, lemur, label_service","GitHub, ShipEngine, Datadog",2022,Python,Django,beta
-size-guide-swan,Product size recommendation service,Experience Engineers,tier_3,"size_guide, swan, size_recommendation","GitHub, TensorFlow, Datadog",2023,Ruby,Rails,generally_available
-moonshot,Experimental features platform,Innovation Iguanas,tier_3,"moon, moonshot_platform, experimental","GitHub, LaunchDarkly, Datadog",2023,Rust,Rocket,alpha
-customer-feedback-ferret,Customer feedback collection service,Support Unicorns,tier_3,"feedback_ferret, ferret, feedback_service","GitHub, SurveyMonkey, Datadog",2022,Go,FastHTTP,beta
-promo-code-parrot,Promotional code validation service,Deal Dragons,tier_2,"promo_parrot, parrot, promo_service","GitHub, Redis, Datadog",2021,TypeScript,Deno,generally_available
-inventory-insights,Inventory analytics service,Stock Whisperers,tier_2,"inv_insights, insights, inventory_analytics","GitHub, Tableau, Datadog",2022,Python,Django,beta
-warehouse-walrus,Warehouse space optimization service,Logistics Lions,tier_2,"warehouse_walrus, walrus, space_optimizer","GitHub, TensorFlow, Datadog",2023,Ruby,Rails,generally_available
-product-recommendation-raptor,Product recommendation engine,Data Wizards,tier_2,"recommendation_raptor, raptor, rec_engine","GitHub, TensorFlow, Datadog",2022,Rust,Rocket,alpha
-shipping-rate-shark,Shipping cost optimization service,Logistics Lions,tier_2,"shipping_shark, shark, rate_optimizer","GitHub, Redis, Datadog",2021,Go,FastHTTP,beta
-inventory-allocation-ant,Inventory distribution service,Stock Whisperers,tier_2,"allocation_ant, ant, inventory_distributor","GitHub, Redis, Datadog",2022,TypeScript,Deno,generally_available
-customer-journey-jaguar,Customer journey tracking service,Experience Engineers,tier_2,"journey_jaguar, jaguar, customer_journey","GitHub, Segment, Datadog",2023,Python,Django,beta
-order-routing-octopus,Order distribution service,Shipping Sharks,tier_1,"routing_octopus, octopus, order_router","GitHub, PagerDuty, Datadog",2021,Rust,Rocket,alpha
-product-category-cougar,Category management service,Catalog Cowboys,tier_2,"category_cougar, cougar, category_manager","GitHub, Elasticsearch, Datadog",2022,Go,FastHTTP,beta
-shipping-label-snake,Shipping label generation service,Logistics Lions,tier_2,"label_snake, snake, label_generator","GitHub, ShipEngine, Datadog",2021,TypeScript,Deno,generally_available
-customer-support-ticketing,Support ticket management service,Support Unicorns,tier_2,"support_tickets, ticketing, ticket_manager","GitHub, Zendesk, Datadog",2022,Python,Django,beta
-vendor-integration-viper,Vendor API integration service,Supplier Squad,tier_2,"integration_viper, viper, vendor_integration","GitHub, Kong, Datadog",2023,Ruby,Rails,generally_available
-product-import-platypus,Product data import service,Catalog Cowboys,tier_2,"import_platypus, platypus, product_importer","GitHub, RabbitMQ, Datadog",2022,Rust,Rocket,alpha
-order-history-hawk,Order history service,Data Nomads,tier_2,"history_hawk, hawk, order_history","GitHub, MongoDB, Datadog",2021,Go,FastHTTP,beta
-cart-recovery-crab,Abandoned cart recovery service,Revenue Rabbits,tier_2,"recovery_crab, crab, cart_recovery","GitHub, SendGrid, Datadog",2022,TypeScript,Deno,generally_available
-payment-gateway-gorilla,Payment processor integration,Money Mavericks,tier_1,"gateway_gorilla, gorilla, payment_gateway","GitHub, PagerDuty, Stripe",2021,Python,Django,beta
-user-activity-tracker,User behavior analytics service,Data Wizards,tier_2,"activity_tracker, tracker, user_analytics","GitHub, Snowplow, Datadog",2022,Ruby,Rails,generally_available
-email-template-eagle,Email template management service,Comms Cobras,tier_3,"template_eagle, eagle, email_templates","GitHub, SendGrid, Datadog",2023,Rust,Rocket,alpha
-product-availability-aardvark,Stock availability service,Stock Whisperers,tier_2,"availability_aardvark, aardvark, stock_checker","GitHub, Redis, Datadog",2022,Go,FastHTTP,beta
-delivery-date-predictor,Delivery estimation service,Logistics Lions,tier_2,"date_predictor, predictor, delivery_estimates","GitHub, ML Engine, Datadog",2021,TypeScript,Deno,generally_available
-returns-processing-raccoon,Returns management service,Customer Champions,tier_2,"processing_raccoon, raccoon, returns_manager","GitHub, Zendesk, Datadog",2022,Python,Django,beta
-inventory-restock-ibis,Restock alert service,Stock Whisperers,tier_2,"restock_ibis, ibis, restock_alerts","GitHub, RabbitMQ, Datadog",2023,Ruby,Rails,generally_available
-price-comparison-peacock,Price comparison service,Price Pirates,tier_2,"comparison_peacock, peacock, price_compare","GitHub, Redis, Datadog",2022,Rust,Rocket,alpha
-order-validation-owl,Order validation service,Shipping Sharks,tier_1,"validation_owl, owl, order_validator","GitHub, PagerDuty, Datadog",2021,Go,FastHTTP,beta
-product-feed-fox,Product feed management service,Catalog Cowboys,tier_2,"feed_fox, fox, product_feeds","GitHub, RabbitMQ, Datadog",2022,TypeScript,Deno,generally_available
-inventory-sync-impala,Inventory synchronization service,Stock Whisperers,tier_2,"sync_impala, impala, inventory_sync","GitHub, Kafka, Datadog",2022,Rust,Rocket,generally_available
-internal-tools,Internal Tools,Internal Tools,tier_3,"internal-tools, internal_tools","Datadog",2022,Go,Cobra,generally_available
+Service Name,Description,Team Owner,Tier,Aliases,Tools,Created,Language,Framework,Lifecycle,Deploys
+shopping-cart,Shopping Cart,Midnight Bandits,tier_1,"shopping-cart,cart_ninja,ninja,shopping_cart","GitHub,PagerDuty,Datadog",2020,Ruby,Rails,beta,true
+payment-wombat,Payment processing and gateway service,Money Mavericks,tier_1,"payment-wombat,wombat,payment_processor","GitHub,PagerDuty,New Relic,Datadog",2019,Rust,Rocket,alpha,true
+inventory-oracle,Real-time inventory tracking and management,Stock Whisperers,tier_2,"inventory_oracle,oracle,inv_oracle","GitHub,Jira,Datadog",2021,Go,FastHTTP,beta,false
+hedgehog,User authentication and authorization service,Security Pandas,tier_1,"auth_hedgehog,auth_service,hedgehog_auth","GitHub,PagerDuty,Datadog",2018,TypeScript,Deno,generally_available,false
+order-fulfillment-maestro,Order processing and fulfillment orchestration,Shipping Sharks,tier_1,"order_fulfillment,maestro,fulfillment_service","GitHub,PagerDuty,New Relic",2020,Python,Django,beta,false
+raccoon,Search and recommendation engine,Data Wizards,tier_2,"search_raccoon,raccoon_search,search_service","GitHub,Elasticsearch,Datadog",2022,Ruby,Rails,generally_available,false
+warehouse-pulse,Warehouse management and tracking,Logistics Lions,tier_2,"warehouse_pulse,pulse,wh_pulse","GitHub,Jira,Datadog",2021,Rust,Rocket,alpha,false
+chameleon,Dynamic pricing engine,Price Pirates,tier_2,"pricing_chameleon,price_engine,chameleon_pricing","GitHub,New Relic,Datadog",2023,Go,FastHTTP,beta,false
+customer-satisfaction-portal,Customer service and support platform,Support Unicorns,tier_3,"csat_portal,satisfaction_portal,csat","GitHub,Zendesk,Slack",2019,TypeScript,Deno,generally_available,false
+thunderbolt,Real-time analytics processing,Data Nomads,tier_2,"analytics_bolt,bolt,thunder","GitHub,Datadog,Elasticsearch",2022,Python,Django,beta,false
+product-catalog-sage,Product information management,Catalog Cowboys,tier_1,"catalog_sage,sage,product_sage","GitHub,PagerDuty,Datadog",2020,Ruby,Rails,generally_available,false
+notification-yeti,Customer notification service,Comms Cobras,tier_3,"notif_yeti,yeti,notification_service","GitHub,SendGrid,Datadog",2021,Rust,Rocket,alpha,false
+fraud-sentinel,Fraud detection and prevention,Risk Rangers,tier_1,"fraud_sentinel,sentinel,fraud_detection","GitHub,PagerDuty,New Relic",2019,Go,FastHTTP,beta,false
+discount-penguin,Promotion and discount management,Deal Dragons,tier_2,"discount_penguin,penguin,promo_penguin","GitHub,Jira,Datadog",2022,TypeScript,Deno,generally_available,false
+shipping-calculator-phoenix,Shipping rate calculation service,Logistics Lions,tier_2,"shipping_calculator,phoenix,shipping_phoenix","GitHub,New Relic,Datadog",2021,Python,Django,beta,false
+return-dingo,Returns and refunds processing,Customer Champions,tier_2,"returns_dingo,dingo,return_processor","GitHub,Zendesk,Datadog",2023,Ruby,Rails,generally_available,false
+wishlist-whale,Wishlist management service,Feature Foxes,tier_3,"wishlist_whale,whale,wish_service","GitHub,Jira,Datadog",2022,Rust,Rocket,alpha,false
+review-rhino,Product review management,Content Crew,tier_2,"review_rhino,rhino,review_service","GitHub,Elasticsearch,Datadog",2021,Go,FastHTTP,beta,false
+cart-abandonment-koala,Cart abandonment recovery service,Revenue Rabbits,tier_2,"cart_koala,koala,abandonment_service","GitHub,SendGrid,Datadog",2022,Python,Django,beta,false
+content-kangaroo,Content management system,Content Crew,tier_2,"content_kangaroo,kangaroo,cms_service","GitHub,Contentful,Datadog",2020,Rust,Rocket,alpha,false
+user-preferences-panda,User settings and preferences service,Feature Foxes,tier_3,"user_preferences,panda,preferences_service","GitHub,Redis,Datadog",Go,FastHTTP,2022,beta,false
+product-comparison-cobra,Product comparison engine,Catalog Cowboys,tier_3,"comparison_cobra,cobra,product_compare","GitHub,Elasticsearch,Datadog",2021,TypeScript,Deno,generally_available,false
+checkout-cheetah,Fast checkout processing service,Money Mavericks,tier_1,"checkout_cheetah,cheetah,fast_checkout","GitHub,PagerDuty,New Relic",2020,Python,Django,beta,true
+delivery-tracker-dolphin,Delivery status tracking service,Shipping Sharks,tier_2,"delivery_tracker,dolphin,tracker_dolphin","GitHub,Twilio,Datadog",2021,Ruby,Rails,generally_available,false
+subscription-sloth,Subscription management service,Revenue Rabbits,tier_2,"subscription_sloth,sloth,sub_service","GitHub,Stripe,Datadog",2022,Rust,Rocket,alpha,false
+inventory-snapshot,Inventory backup service,Stock Whisperers,tier_3,"inv_snapshot,snapshot,inventory_backup","GitHub,S3,Datadog",2021,Go,FastHTTP,beta,false
+marketing-meerkat,Marketing automation service,Growth Gorillas,tier_2,"marketing_meerkat,meerkat,mkt_automation","GitHub,Mailchimp,Datadog",2022,TypeScript,Deno,generally_available,false
+customer-segmentation-squid,Customer segmentation service,Data Wizards,tier_2,"segmentation_squid,squid,customer_segments","GitHub,Snowflake,Datadog",2023,Python,Django,beta,false
+gift-card-gopher,Gift card management service,Money Mavericks,tier_2,"gift_card_gopher,gopher,gc_service","GitHub,Redis,Datadog",2021,Ruby,Rails,generally_available,false
+address-validator-armadillo,Address validation service,Logistics Lions,tier_3,"address_validator,armadillo,address_service","GitHub,Google Maps API,Datadog",2022,Rust,Rocket,alpha,true
+product-bundle-beaver,Product bundling service,Catalog Cowboys,tier_2,"bundle_beaver,beaver,product_bundles","GitHub,Redis,Datadog",2023,Go,FastHTTP,beta,false
+tax-calculator-turtle,Tax computation service,Money Mavericks,tier_1,"tax_calculator,turtle,tax_service","GitHub,PagerDuty,Avalara",2021,TypeScript,Deno,generally_available,false
+vendor-portal-vulture,Vendor management platform,Supplier Squad,tier_2,"vendor_portal,vulture,vendor_management","GitHub,Jira,Datadog",2022,Python,Django,beta,false
+session-management-salamander,User session handling service,Security Pandas,tier_1,"session_management,salamander,session_handler","GitHub,PagerDuty,Redis",2020,Ruby,Rails,generally_available,false
+product-search-sphinx,Product search service,Data Wizards,tier_1,"search_sphinx,sphinx,product_search","GitHub,PagerDuty,Elasticsearch",2021,Rust,Rocket,alpha,false
+loyalty-program-lion,Customer loyalty service,Revenue Rabbits,tier_2,"loyalty_lion,lion,loyalty_service","GitHub,Redis,Datadog",2022,Go,FastHTTP,beta,false
+invoice-generator-iguana,Invoice creation service,Money Mavericks,tier_2,"invoice_iguana,iguana,invoice_gen","GitHub,DocuSign,Datadog",2021,TypeScript,Deno,generally_available,false
+return-label-lemur,Return shipping label generator,Logistics Lions,tier_2,"return_label,lemur,label_service","GitHub,ShipEngine,Datadog",2022,Python,Django,beta,false
+size-guide-swan,Product size recommendation service,Experience Engineers,tier_3,"size_guide,swan,size_recommendation","GitHub,TensorFlow,Datadog",2023,Ruby,Rails,generally_available,false
+moonshot,Experimental features platform,Innovation Iguanas,tier_3,"moon,moonshot_platform,experimental","GitHub,LaunchDarkly,Datadog",2023,Rust,Rocket,alpha,false
+customer-feedback-ferret,Customer feedback collection service,Support Unicorns,tier_3,"feedback_ferret,ferret,feedback_service","GitHub,SurveyMonkey,Datadog",2022,Go,FastHTTP,beta,false
+promo-code-parrot,Promotional code validation service,Deal Dragons,tier_2,"promo_parrot,parrot,promo_service","GitHub,Redis,Datadog",2021,TypeScript,Deno,generally_available,false
+inventory-insights,Inventory analytics service,Stock Whisperers,tier_2,"inv_insights,insights,inventory_analytics","GitHub,Tableau,Datadog",2022,Python,Django,beta,false
+warehouse-walrus,Warehouse space optimization service,Logistics Lions,tier_2,"warehouse_walrus,walrus,space_optimizer","GitHub,TensorFlow,Datadog",2023,Ruby,Rails,generally_available,false
+product-recommendation-raptor,Product recommendation engine,Data Wizards,tier_2,"recommendation_raptor,raptor,rec_engine","GitHub,TensorFlow,Datadog",2022,Rust,Rocket,alpha,false
+shipping-rate-shark,Shipping cost optimization service,Logistics Lions,tier_2,"shipping_shark,shark,rate_optimizer","GitHub,Redis,Datadog",2021,Go,FastHTTP,beta,false
+inventory-allocation-ant,Inventory distribution service,Stock Whisperers,tier_2,"allocation_ant,ant,inventory_distributor","GitHub,Redis,Datadog",2022,TypeScript,Deno,generally_available,false
+customer-journey-jaguar,Customer journey tracking service,Experience Engineers,tier_2,"journey_jaguar,jaguar,customer_journey","GitHub,Segment,Datadog",2023,Python,Django,beta,false
+order-routing-octopus,Order distribution service,Shipping Sharks,tier_1,"routing_octopus,octopus,order_router","GitHub,PagerDuty,Datadog",2021,Rust,Rocket,alpha,false
+product-category-cougar,Category management service,Catalog Cowboys,tier_2,"category_cougar,cougar,category_manager","GitHub,Elasticsearch,Datadog",2022,Go,FastHTTP,beta,false
+shipping-label-snake,Shipping label generation service,Logistics Lions,tier_2,"label_snake,snake,label_generator","GitHub,ShipEngine,Datadog",2021,TypeScript,Deno,generally_available,false
+customer-support-ticketing,Support ticket management service,Support Unicorns,tier_2,"support_tickets,ticketing,ticket_manager","GitHub,Zendesk,Datadog",2022,Python,Django,beta,false
+vendor-integration-viper,Vendor API integration service,Supplier Squad,tier_2,"integration_viper,viper,vendor_integration","GitHub,Kong,Datadog",2023,Ruby,Rails,generally_available,false
+product-import-platypus,Product data import service,Catalog Cowboys,tier_2,"import_platypus,platypus,product_importer","GitHub,RabbitMQ,Datadog",2022,Rust,Rocket,alpha,false
+order-history-hawk,Order history service,Data Nomads,tier_2,"history_hawk,hawk,order_history","GitHub,MongoDB,Datadog",2021,Go,FastHTTP,beta,false
+cart-recovery-crab,Abandoned cart recovery service,Revenue Rabbits,tier_2,"recovery_crab,crab,cart_recovery","GitHub,SendGrid,Datadog",2022,TypeScript,Deno,generally_available,false
+payment-gateway-gorilla,Payment processor integration,Money Mavericks,tier_1,"gateway_gorilla,gorilla,payment_gateway","GitHub,PagerDuty,Stripe",2021,Python,Django,beta,false
+user-activity-tracker,User behavior analytics service,Data Wizards,tier_2,"activity_tracker,tracker,user_analytics","GitHub,Snowplow,Datadog",2022,Ruby,Rails,generally_available,false
+email-template-eagle,Email template management service,Comms Cobras,tier_3,"template_eagle,eagle,email_templates","GitHub,SendGrid,Datadog",2023,Rust,Rocket,alpha,false
+product-availability-aardvark,Stock availability service,Stock Whisperers,tier_2,"availability_aardvark,aardvark,stock_checker","GitHub,Redis,Datadog",2022,Go,FastHTTP,beta,false
+delivery-date-predictor,Delivery estimation service,Logistics Lions,tier_2,"date_predictor,predictor,delivery_estimates","GitHub,ML Engine,Datadog",2021,TypeScript,Deno,generally_available,false
+inventory-restock-ibis,Restock alert service,Stock Whisperers,tier_2,"restock_ibis,ibis,restock_alerts","GitHub,RabbitMQ,Datadog",2023,Ruby,Rails,generally_available,false
+price-comparison-peacock,Price comparison service,Price Pirates,tier_2,"comparison_peacock,peacock,price_compare","GitHub,Redis,Datadog",2022,Rust,Rocket,alpha,false
+order-validation-owl,Order validation service,Shipping Sharks,tier_1,"validation_owl,owl,order_validator","GitHub,PagerDuty,Datadog",2021,Go,FastHTTP,beta,false
+product-feed-fox,Product feed management service,Catalog Cowboys,tier_2,"feed_fox,fox,product_feeds","GitHub,RabbitMQ,Datadog",2022,TypeScript,Deno,generally_available,false
+inventory-sync-impala,Inventory synchronization service,Stock Whisperers,tier_2,"sync_impala,impala,inventory_sync","GitHub,Kafka,Datadog",2022,Rust,Rocket,generally_available,false
+internal-tools,Internal Tools,Internal Tools,tier_3,"internal-tools,internal_tools","Datadog",2022,Go,Cobra,generally_available,false
