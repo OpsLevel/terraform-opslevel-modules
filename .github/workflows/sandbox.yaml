@@ -1,9 +1,9 @@
-name: "Custom Actions Handler"
+name: "Create Sandbox"
 
 on:
   repository_dispatch:
     types:
-      - actions
+      - sandbox
   workflow_dispatch:
     inputs:
       api_token:
