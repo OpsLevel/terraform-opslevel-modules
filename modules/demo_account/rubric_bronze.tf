@@ -4,7 +4,7 @@ module "service_owner_defined" {
   name     = "Owner is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 }
 
@@ -15,7 +15,7 @@ module "service_repo_defined" {
   name     = "Repository is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 }
 
@@ -25,7 +25,7 @@ module "service_tier_defined" {
   name     = "Tier is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   property = "tier_index"
@@ -38,7 +38,7 @@ module "branch_protection" {
   name     = "Default Branch is Protected"
   category = opslevel_rubric_category.all["security"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 }
 
@@ -48,7 +48,7 @@ module "has_sentry" {
   name     = "Has Error Tracking"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tool_category = "errors"
@@ -64,7 +64,7 @@ module "has_deployed_this_qtr" {
   name     = "[UPCOMING] Has Deployed this Quarter"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = false
 
   days = 90
@@ -76,7 +76,7 @@ module "has_dependencies" {
   name     = "Has Defined Dependencies"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["bronze"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 }
 

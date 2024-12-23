@@ -17,7 +17,6 @@ shipping-calculator-phoenix,Shipping rate calculation service,Logistics Lions,ti
 return-dingo,Returns and refunds processing,Customer Champions,tier_2,"returns_dingo, dingo, return_processor","GitHub, Zendesk, Datadog",2023,Ruby,Rails,generally_available
 wishlist-whale,Wishlist management service,Feature Foxes,tier_3,"wishlist_whale, whale, wish_service","GitHub, Jira, Datadog",2022,Rust,Rocket,alpha
 review-rhino,Product review management,Content Crew,tier_2,"review_rhino, rhino, review_service","GitHub, Elasticsearch, Datadog",2021,Go,FastHTTP,beta
-inventory-forecaster-owl,Inventory prediction service,Stock Whisperers,tier_2,"inventory_forecaster, owl, forecast_owl","GitHub, New Relic, Datadog",2023,TypeScript,Deno,generally_available
 cart-abandonment-koala,Cart abandonment recovery service,Revenue Rabbits,tier_2,"cart_koala, koala, abandonment_service","GitHub, SendGrid, Datadog",2022,Python,Django,beta
 platypus,A/B testing platform,Experience Engineers,tier_2,"ab_platypus, ab_testing, test_platypus","GitHub, Datadog, LaunchDarkly",2021,Ruby,Rails,generally_available
 content-kangaroo,Content management system,Content Crew,tier_2,"content_kangaroo, kangaroo, cms_service","GitHub, Contentful, Datadog",2020,Rust,Rocket,alpha
@@ -49,7 +48,6 @@ product-recommendation-raptor,Product recommendation engine,Data Wizards,tier_2,
 shipping-rate-shark,Shipping cost optimization service,Logistics Lions,tier_2,"shipping_shark, shark, rate_optimizer","GitHub, Redis, Datadog",2021,Go,FastHTTP,beta
 inventory-allocation-ant,Inventory distribution service,Stock Whisperers,tier_2,"allocation_ant, ant, inventory_distributor","GitHub, Redis, Datadog",2022,TypeScript,Deno,generally_available
 customer-journey-jaguar,Customer journey tracking service,Experience Engineers,tier_2,"journey_jaguar, jaguar, customer_journey","GitHub, Segment, Datadog",2023,Python,Django,beta
-price-optimization-phoenix,Dynamic pricing optimization service,Price Pirates,tier_2,"price_phoenix, phoenix, price_optimizer","GitHub, TensorFlow, Datadog",2022,Ruby,Rails,generally_available
 order-routing-octopus,Order distribution service,Shipping Sharks,tier_1,"routing_octopus, octopus, order_router","GitHub, PagerDuty, Datadog",2021,Rust,Rocket,alpha
 product-category-cougar,Category management service,Catalog Cowboys,tier_2,"category_cougar, cougar, category_manager","GitHub, Elasticsearch, Datadog",2022,Go,FastHTTP,beta
 shipping-label-snake,Shipping label generation service,Logistics Lions,tier_2,"label_snake, snake, label_generator","GitHub, ShipEngine, Datadog",2021,TypeScript,Deno,generally_available
@@ -68,5 +66,5 @@ inventory-restock-ibis,Restock alert service,Stock Whisperers,tier_2,"restock_ib
 price-comparison-peacock,Price comparison service,Price Pirates,tier_2,"comparison_peacock, peacock, price_compare","GitHub, Redis, Datadog",2022,Rust,Rocket,alpha
 order-validation-owl,Order validation service,Shipping Sharks,tier_1,"validation_owl, owl, order_validator","GitHub, PagerDuty, Datadog",2021,Go,FastHTTP,beta
 product-feed-fox,Product feed management service,Catalog Cowboys,tier_2,"feed_fox, fox, product_feeds","GitHub, RabbitMQ, Datadog",2022,TypeScript,Deno,generally_available
-customer-profile-penguin,Customer profile service,Security Pandas,tier_1,"profile_penguin, penguin, customer_profiles","GitHub, PagerDuty, MongoDB",2021,Python,Django,beta
 inventory-sync-impala,Inventory synchronization service,Stock Whisperers,tier_2,"sync_impala, impala, inventory_sync","GitHub, Kafka, Datadog",2022,Rust,Rocket,generally_available
+internal-tools,Internal Tools,Internal Tools,tier_3,"internal-tools, internal_tools","Datadog",2022,Go,Cobra,generally_available

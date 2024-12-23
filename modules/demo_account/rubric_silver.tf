@@ -4,7 +4,7 @@ module "service_lifecycle_defined" {
   name     = "Lifecycle is Defined"
   category = opslevel_rubric_category.all["quality"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   property = "lifecycle_index"
@@ -16,7 +16,7 @@ module "has_splunk" {
   name     = "Has Logging Dashboard"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tool_category = "logs"
@@ -32,7 +32,7 @@ module "has_datadog" {
   name     = "Has Monitoring Dashboard"
   category = opslevel_rubric_category.all["observability"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tool_category = "metrics"
@@ -48,7 +48,7 @@ module "has_pagerduty" {
   name     = "Has Alerting/Paging System"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tool_category = "incidents"
@@ -64,7 +64,7 @@ module "fast_builds" {
   name     = "CI is Fast"
   category = opslevel_rubric_category.all["performance"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   tag_key = "build_speed"
@@ -80,7 +80,7 @@ module "package_version_github_checkout" {
   name     = "Uses Latest GA Checkout"
   category = opslevel_rubric_category.all["security"].id
   level    = opslevel_rubric_level.all["silver"].id
-  owner    = module.internal-tools-team.this.id
+  owner    = module.teams_from_csv["internal-tools"].this.id
   enabled  = true
 
   package_constraint     = "matches_version"
