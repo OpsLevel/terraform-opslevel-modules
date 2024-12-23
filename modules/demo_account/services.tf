@@ -9,7 +9,8 @@ locals {
 }
 
 module "services_from_csv" {
-  for_each = { for svc in local.csv_services : svc.service_name => svc }
+  depends_on = [module.teams_from_csv]
+  for_each   = { for svc in local.csv_services : svc.service_name => svc }
 
   source          = "../service"
   name            = each.value.service_name
@@ -18,7 +19,7 @@ module "services_from_csv" {
   framework       = each.value.framework
   language        = each.value.language
   lifecycle_alias = each.value.lifecycle
-  owner           = each.value.team_owner
+  owner           = module.teams_from_csv[each.key].this.id
   tier_alias      = each.value.tier
   tags            = ["db:mysql", "k8s:true", "build_speed:fast"]
   tools = [
@@ -31,4 +32,13 @@ module "services_from_csv" {
   ]
   repositories = local.repository
   properties   = local.properties
+}
+
+module "teams_from_csv" {
+  for_each = { for svc in local.csv_services : svc.service_name => svc }
+
+  source = "../team"
+
+  name   = each.value.team_owner
+  parent = module.company-all.this.id
 }
