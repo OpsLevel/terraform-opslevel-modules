@@ -9,7 +9,6 @@ locals {
 }
 
 module "services_from_csv" {
-  depends_on = [module.teams_from_csv]
   for_each   = { for svc in local.csv_services : svc.service_name => svc }
 
   source          = "../service"
