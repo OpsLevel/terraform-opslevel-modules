@@ -5,7 +5,7 @@ module "manual_approval" {
   notes    = "Approving this check you solemnly swear you have finished all your homework!"
   category = opslevel_rubric_category.all["misc"].id
   level    = opslevel_rubric_level.all["platinum"].id
-  owner    = module.teams_from_csv["internal-tools"].this.id
+  owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
 }
 
@@ -15,7 +15,7 @@ module "has_gremlin" {
   name     = "Performs Choas Experiments"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["platinum"].id
-  owner    = module.teams_from_csv["internal-tools"].this.id
+  owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
 
   tool_category = "other"
@@ -35,7 +35,7 @@ module "has_sentry_stg" {
   name     = "Has Error Tracking in Staging"
   category = opslevel_rubric_category.all["reliability"].id
   level    = opslevel_rubric_level.all["platinum"].id
-  owner    = module.teams_from_csv["internal-tools"].this.id
+  owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
 
   tool_category = "errors"
@@ -51,7 +51,7 @@ module "mttr" {
   name     = "MTTR < 2 hours"
   category = opslevel_rubric_category.all["performance"].id
   level    = opslevel_rubric_level.all["platinum"].id
-  owner    = module.teams_from_csv["internal-tools"].this.id
+  owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
 
   tag_key = "mttr"
@@ -67,7 +67,7 @@ module "check_package_version_codecov" {
   name     = "Uses Latest CodeCov"
   category = opslevel_rubric_category.all["security"].id
   level    = opslevel_rubric_level.all["platinum"].id
-  owner    = module.teams_from_csv["internal-tools"].this.id
+  owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
 
   package_constraint     = "matches_version"

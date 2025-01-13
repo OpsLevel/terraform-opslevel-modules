@@ -38,3 +38,4 @@ terraform.rc
 
 # Ignore IDE configuration files
 .idea
+.DS_Store

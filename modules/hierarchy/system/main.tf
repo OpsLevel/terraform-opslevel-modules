@@ -8,9 +8,9 @@ resource "opslevel_system" "this" {
   owner       = local.owner
 }
 
-//resource "opslevel_service_relationship" "this" {
-//  for_each = { for service in var.services : service => service }
-//
-//  system  = opslevel_system.this.id
-//  service = each.value
-//}
+# resource "opslevel_service_relationship" "this" {
+#  for_each = toset(var.services)
+#
+#  system  = opslevel_system.this.id
+#  service = each.value
+# }

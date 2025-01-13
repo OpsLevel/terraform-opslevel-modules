@@ -6,6 +6,7 @@ locals {
       lower(replace(key, " ", "_")) => value
     }
   ]
+  csv_teams = toset([for svc in local.csv_services : svc.team_owner])
 }
 
 module "services_from_csv" {
@@ -18,7 +19,7 @@ module "services_from_csv" {
   framework       = each.value.framework
   language        = each.value.language
   lifecycle_alias = each.value.lifecycle
-  owner           = module.teams_from_csv[each.key].this.id
+  owner           = module.teams_from_csv[each.value.team_owner].this.id
   tier_alias      = each.value.tier
   tags            = ["db:mysql", "k8s:true", "build_speed:fast"]
   tools = [
@@ -34,11 +35,11 @@ module "services_from_csv" {
 }
 
 module "teams_from_csv" {
-  for_each = { for svc in local.csv_services : svc.service_name => svc }
+  for_each = {for team in local.csv_teams : team => team }
 
   source = "../team"
 
-  name   = each.value.team_owner
+  name   = each.value
   parent = module.company-all.this.id
 }
 
