@@ -18,6 +18,7 @@ module "has_splunk" {
   level    = opslevel_rubric_level.all["silver"].id
   owner    = module.teams_from_csv["Internal Tools"].this.id
   enabled  = true
+  filter   = opslevel_filter.python.id
 
   tool_category = "logs"
   environment_predicate = {
