@@ -42,7 +42,7 @@ moonshot,Experimental features platform,Innovation Iguanas,tier_3,"moon,moonshot
 customer-feedback-ferret,Customer feedback collection service,Support Unicorns,tier_3,"feedback_ferret,ferret,feedback_service","GitHub,SurveyMonkey,Datadog",2022,Go,FastHTTP,beta,false
 promo-code-parrot,Promotional code validation service,Deal Dragons,tier_2,"promo_parrot,parrot,promo_service","GitHub,Redis,Datadog",2021,TypeScript,Deno,generally_available,false
 inventory-insights,Inventory analytics service,Stock Whisperers,tier_2,"inv_insights,insights,inventory_analytics","GitHub,Tableau,Datadog",2022,Python,Django,beta,false
-warehouse-walrus,Warehouse space optimization service,Logistics Lions,tier_2,"warehouse_walrus,walrus,space_optimizer","GitHub,TensorFlow,Datadog",2023,Ruby,Rails,generally_available,false
+warehouse-mgmt-service,Warehouse space optimization service,Catalog Cowboys,tier_2,"warehouse_walrus,warehouse-mgmt-service,space_optimizer,sample-warehouse-mgmt-service","GitHub,TensorFlow,Datadog",2023,Python,Django,generally_available,false
 product-recommendation-raptor,Product recommendation engine,Data Wizards,tier_2,"recommendation_raptor,raptor,rec_engine","GitHub,TensorFlow,Datadog",2022,Rust,Rocket,alpha,false
 shipping-rate-shark,Shipping cost optimization service,Logistics Lions,tier_2,"shipping_shark,shark,rate_optimizer","GitHub,Redis,Datadog",2021,Go,FastHTTP,beta,false
 inventory-allocation-ant,Inventory distribution service,Stock Whisperers,tier_2,"allocation_ant,ant,inventory_distributor","GitHub,Redis,Datadog",2022,TypeScript,Deno,generally_available,false
