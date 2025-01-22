@@ -61,6 +61,12 @@ echo "$levels" | jq -r '.[] | select(.Index != 0) | .id' | while read -r id; do
   opslevel delete level "$id"
 done
 
+echo "[opslevel] Deleting Filters..."
+filters=$(opslevel list filters -o json)
+echo "$filters" | jq -r '.[] | .Id' | while read -r id; do
+  opslevel delete filter "$id"
+done
+
 echo "[opslevel] Deleting Integrations..."
 integrations=$(opslevel list integrations -o json)
 echo "$integrations" | jq -r '.[] | .id' | while read -r id; do
