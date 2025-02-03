@@ -1,5 +1,5 @@
 resource "opslevel_filter" "python" {
-  name = "Python Services"
+  name       = "Python Services"
   connective = "and"
   predicate {
     key   = "language"

@@ -35,7 +35,7 @@ module "services_from_csv" {
 }
 
 module "teams_from_csv" {
-  for_each = {for team in local.csv_teams : team => team }
+  for_each = { for team in local.csv_teams : team => team }
 
   source = "../team"
 
