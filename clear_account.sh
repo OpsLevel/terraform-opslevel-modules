@@ -24,6 +24,18 @@ echo "$infra" | jq -r '.[] | .id' | while read -r id; do
   opslevel delete infra "$id"
 done
 
+echo "[opslevel] Deleting Triggers..."
+triggers=$(opslevel list trigger-definition -o json)
+echo "$triggers" | jq -r '.[] | .Id' | while read -r id; do
+  opslevel delete trigger-definition "$id"
+done
+
+echo "[opslevel] Deleting Actions..."
+actions=$(opslevel list actions -o json)
+echo "$actions" | jq -r '.[] | .Id' | while read -r id; do
+  opslevel delete action "$id"
+done
+
 echo "[opslevel] Deleting Teams (errors may occur that is ok)..."
 while true; do
   teams=$(opslevel list teams -o json)
